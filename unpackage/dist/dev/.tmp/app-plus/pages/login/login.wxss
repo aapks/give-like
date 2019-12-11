@@ -1,0 +1,11 @@
+.mauve.data-v-0c4bc8ec {
+  color: #9c26b0;
+}
+.flex.data-v-0c4bc8ec {
+  margin-bottom: 20rpx;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+

@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"mauve.",[1],"data-v-0c4bc8ec { color: #9c26b0; }\n.",[1],"flex.",[1],"data-v-0c4bc8ec { margin-bottom: ",[0,20],"; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }\n",],undefined,{path:"./pages/login/login.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/login/login.wxml') } }));
