@@ -4,7 +4,6 @@ export default {
   onLaunch: function() {
     uni.getSystemInfo({
       success: function(e) {
-        console.log("e: ", e);
         // #ifndef MP
         Vue.prototype.StatusBar = e.statusBarHeight;
         if (e.platform == "android") {

@@ -34,40 +34,26 @@
         <button class="cu-btn block bg-mauve margin-tb-sm lg">立即登录</button>
       </view>
     </form>
-    <!-- <view v-for="item in arr" :key="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci incidunt nam sit officiis magnam odio quos provident aliquam impedit. Vitae corrupti voluptas laboriosam numquam, cumque vel quo sit quam nisi?</view>
-    <uni-load-more :status="more"></uni-load-more>-->
   </view>
 </template>
 
 <script>
+import mixin from './mixin.js'
 import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue";
-let timer;
 export default {
+	mixins: [mixin],
   data() {
     return {
-      arr: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      disabled: false,
-      codeText: "获取验证码",
-      more: "more"
+      more: "more",
+			disabled: false,
+			codeText: "获取验证码"
     };
   },
   components: {
     uniLoadMore
   },
   methods: {
-    getCode() {
-      this.disabled = true;
-      let sec = 3;
-      timer = setInterval(() => {
-        sec--;
-        this.codeText = `${sec}s重新获取`;
-        if (sec < 0) {
-          this.codeText = `重新获取`;
-          this.disabled = false;
-          clearInterval(timer);
-        }
-      }, 1000);
-    }
+    
   },
   onPullDownRefresh() {
     console.log("refresh");
