@@ -1,8 +1,14 @@
 <template>
   <view>
-    <cu-custom bgcolor="bg-white">
+    <cu-custom bgcolor="bg-white" :isBack="true">
       <block slot="content">注册</block>
     </cu-custom>
+    <view class="logo flex justify-center align-center">
+      <view
+        class="cu-avatar xl round"
+        style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"
+      ></view>
+    </view>
     <form>
       <view class="cu-form-group">
         <view class="title">账号</view>
@@ -18,10 +24,6 @@
         <button class="cu-btn bg-green shadow" :disabled="disabled" @click="getCode">{{codeText}}</button>
       </view>
       <view class="cu-form-group">
-        <view class="title">姓名</view>
-        <input type="text" placeholder="请输入姓名" />
-      </view>
-      <view class="cu-form-group">
         <view class="title">登录密码</view>
         <input placeholder="请输入密码" type="password" name="password" />
       </view>
@@ -34,9 +36,9 @@
         <input placeholder="没有可不填" type="text" />
       </view>
       <view class="cu-form-group">
-        <view class="title text-xs">
-          同意
-          <text class="link">注册合约规则</text>
+        <view class="text-xs">
+          接收
+          <text class="link">《用户协议》</text>
         </view>
         <switch
           class="orange radius"
@@ -46,7 +48,7 @@
         ></switch>
       </view>
       <view class="padding">
-        <button class="cu-btn block bg-mauve margin-tb-sm lg">立即注册</button>
+        <button class="cu-btn block bg-orange margin-tb-sm lg">立即注册</button>
       </view>
     </form>
   </view>
@@ -72,11 +74,11 @@ export default {
 </script>
 
 <style lang="scss">
+.logo {
+  height: 400rpx;
+}
 .link {
   margin: 0 5px;
   color: #0081ff;
-}
-.text-xs {
-  font-size: 12px;
 }
 </style>
