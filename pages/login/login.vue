@@ -52,7 +52,7 @@ export default {
   methods: {
     login() {
       uni.navigateTo({
-        url: "/pages/task/task"
+        url: "/pages/index/index"
       });
     }
   },
