@@ -23,7 +23,7 @@
         <input placeholder="请输入密码" type="password" name="password" />
       </view>
       <view class="padding">
-        <button class="cu-btn block bg-orange margin-tb-sm lg">立即登录</button>
+        <button class="cu-btn block bg-orange margin-tb-sm lg" @click="login">立即登录</button>
       </view>
       <view class="login-bar flex justify-between">
         <button class="cu-btn sm bg-white">
@@ -49,7 +49,13 @@ export default {
   components: {
     uniLoadMore
   },
-  methods: {},
+  methods: {
+    login() {
+      uni.navigateTo({
+        url: "/pages/task/task"
+      });
+    }
+  },
   onPullDownRefresh() {
     console.log("refresh");
     setTimeout(function() {

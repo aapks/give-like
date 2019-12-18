@@ -119,7 +119,11 @@
 			"path": "pages/login/forget",
 			"style": {}
 		}
-	],
+        ,{
+            "path" : "pages/task/task",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"mp-alipay": {
 			/* 支付宝小程序特有相关 */
