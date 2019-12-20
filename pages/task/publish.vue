@@ -23,24 +23,15 @@
 
       <view class="cu-form-group">
         <view class="title">任务类型</view>
-        <checkbox
-          :class="checkbox[0].checked?'checked':''"
-          :checked="checkbox[0].checked?true:false"
-          @click="CheckboxChange"
-          value="A"
-        >点赞</checkbox>
-        <checkbox
-          :class="checkbox[0].checked?'checked':''"
-          :checked="checkbox[0].checked?true:false"
-          @click="CheckboxChange"
-          value="A"
-        >评论</checkbox>
-        <checkbox
-          :class="checkbox[0].checked?'checked':''"
-          :checked="checkbox[0].checked?true:false"
-          @click="CheckboxChange"
-          value="A"
-        >关注</checkbox>
+        <view v-for="(item,index) in checkbox" :key="index">
+          <checkbox
+            :class="item.checked?'checked':''"
+            :checked="item.checked?true:false"
+            @click="CheckboxChange(item)"
+            value="A"
+          ></checkbox>
+          <text class="margin-left-xs">{{item.label}}</text>
+        </view>
       </view>
 
       <view class="cu-form-group">
@@ -60,23 +51,6 @@
         >次日零点生效，如竞价成功，次日显示在置顶推荐任务栏中，按出价由高至底排序，非必选项，涨粉效果更快！</view>
         <button class="cu-btn block bg-orange margin-top-sm lg">确认发布</button>
       </view>
-
-      <!-- <view class="cu-form-group">
-        <view class="title">密码</view>
-        <input placeholder="请输入密码" type="password" name="password" />
-      </view>
-      <view class="padding">
-        <button class="cu-btn block bg-orange margin-tb-sm lg" @click="login">立即登录</button>
-      </view>
-      <view class="login-bar flex justify-between">
-        <button class="cu-btn sm bg-white">
-          没有账号？
-          <navigator class="primary" hover-class="none" url="/pages/login/register">去注册</navigator>
-        </button>
-        <button class="cu-btn sm bg-white primary">
-          <navigator hover-class="none" url="/pages/login/forget">忘记密码?</navigator>
-        </button>
-      </view>-->
     </form>
     <view class="cu-tabbar-height"></view>
   </view>
@@ -92,14 +66,17 @@ export default {
       checkbox: [
         {
           value: "A",
-          checked: true
+          label: "点赞",
+          checked: false
         },
         {
           value: "B",
-          checked: true
+          label: "评论",
+          checked: false
         },
         {
           value: "C",
+          label: "关注",
           checked: false
         }
       ]
@@ -112,18 +89,9 @@ export default {
     DateChange(e) {
       this.date = e.detail.value;
     },
-    CheckboxChange(e) {
-      var items = this.checkbox,
-        values = e.detail.value;
-      for (var i = 0, lenI = items.length; i < lenI; ++i) {
-        items[i].checked = false;
-        for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
-          if (items[i].value == values[j]) {
-            items[i].checked = true;
-            break;
-          }
-        }
-      }
+    CheckboxChange(item) {
+      item.checked = !item.checked;
+      this.$set(this.checkbox, item);
     }
   }
 };
