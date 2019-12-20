@@ -34,7 +34,7 @@
         </view>
         <view class="action">
           <view class="text-red text-sm text-bold margin-bottom-xs">1.00元</view>
-          <button class="cu-btn bg-blue round sm" @click="takeOrder">上传凭证</button>
+          <button class="cu-btn bg-blue round sm" @click="toUpload">上传凭证</button>
         </view>
       </view>
     </view>
@@ -74,11 +74,10 @@ export default {
       this.TabCur = e.currentTarget.dataset.id;
       this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60;
     },
-    takeOrder() {
-      this.loadModal = true;
-      setTimeout(() => {
-        this.loadModal = false;
-      }, 1500);
+    toUpload() {
+      uni.navigateTo({
+        url: "/pages/task/upload"
+      });
     }
   }
 };

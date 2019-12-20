@@ -1,18 +1,35 @@
 <template>
   <view>
-    <view class="padding">
-      <view>
-        <view
-          class="cu-avatar round lg"
-          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
-        ></view>
+    <view class="user-panel padding">
+      <view class="margin-bottom-lg text-right">
+        <text class="cuIcon-settings"></text>
+      </view>
+      <view class="flex justify-between">
+        <view class="flex">
+          <view
+            class="cu-avatar round lg"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
+          ></view>
 
-        <view>李牧尘123</view>
+          <view class="margin-left-sm">
+            <view class="margin-bottom-xs text-bold">李牧尘</view>
+            <view class="text-sm">信用分: 23</view>
+          </view>
+        </view>
+
+        <navigator url="/pages/login/login">
+          个人中心
+          <text class="cuIcon-right"></text>
+        </navigator>
       </view>
 
-      <view class>
-        <view>27563余额</view>
-        <view>349团队人数</view>
+      <view class="flex">
+        <view class="basis-df margin-xs padding-sm radius text-center">
+          <view class="text-bold">27563</view>余额
+        </view>
+        <view class="basis-df margin-xs padding-sm radius text-center">
+          <view class="text-bold">349</view>团队人数
+        </view>
       </view>
 
       <view class="flex justify-between bg-blue radius padding">
@@ -24,6 +41,7 @@
         <button class="cu-btn bg-orange radius sm" @click="update">即刻升级</button>
       </view>
     </view>
+
     <view class="cu-bar bg-white">
       <view class="action">
         <text class="cuIcon-title text-orange"></text>

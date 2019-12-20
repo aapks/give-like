@@ -41,7 +41,7 @@
       </view>
     </view>
 
-    <!-- <basics v-if="PageCur=='task'"></basics> -->
+    <basics v-if="PageCur=='task'"></basics>
     <!-- <view class="cu-bar tabbar bg-white shadow foot">
 			<view class="action" @click="NavChange" data-cur="basics">
 				<view class='cuIcon-cu-image'>
