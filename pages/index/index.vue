@@ -1,6 +1,12 @@
 <template>
   <view>
     <task v-if="PageCur=='task'"></task>
+    <!-- 商城 -->
+    <!-- 发布 -->
+    <publish v-if="PageCur=='publish'"></publish>
+    <!-- 发现 -->
+    <!-- 我的 -->
+    <user v-if="PageCur=='user'"></user>
     <components v-if="PageCur=='component'"></components>
     <plugin v-if="PageCur=='plugin'"></plugin>
 
@@ -17,8 +23,8 @@
         </view>
         <view :class="PageCur=='component'?'text-orange':'text-gray'">会员商城</view>
       </view>
-      <view class="action text-gray add-action">
-        <button class="cu-btn cuIcon-add bg-green shadow"></button>
+      <view class="action text-gray add-action" @click="NavChange" data-cur="publish">
+        <button class="cu-btn cuIcon-add bg-orange shadow"></button>
         发布
       </view>
       <view class="action" @click="NavChange" data-cur="plugin">
@@ -27,15 +33,15 @@
         </view>
         <view :class="PageCur=='plugin'?'text-orange':'text-gray'">发现</view>
       </view>
-      <view class="action" @click="NavChange" data-cur="plugin">
+      <view class="action" @click="NavChange" data-cur="user">
         <view class="cuIcon-cu-image">
-          <image :src="'/static/tabbar/plugin' + [PageCur == 'plugin'?'_cur':''] + '.png'" />
+          <image :src="'/static/tabbar/plugin' + [PageCur == 'user'?'_cur':''] + '.png'" />
         </view>
-        <view :class="PageCur=='plugin'?'text-orange':'text-gray'">我的</view>
+        <view :class="PageCur=='user'?'text-orange':'text-gray'">我的</view>
       </view>
     </view>
 
-    <!-- <basics v-if="PageCur=='basics'"></basics> -->
+    <!-- <basics v-if="PageCur=='task'"></basics> -->
     <!-- <view class="cu-bar tabbar bg-white shadow foot">
 			<view class="action" @click="NavChange" data-cur="basics">
 				<view class='cuIcon-cu-image'>
@@ -66,6 +72,19 @@ export default {
       PageCur: "task"
     };
   },
+  onPullDownRefresh() {
+    console.log("refresh");
+    setTimeout(function() {
+      uni.showToast({
+        title: "已刷新"
+      });
+      uni.stopPullDownRefresh();
+    }, 1000);
+  },
+  onReachBottom() {
+    console.log("到底了");
+    this.more = "loading";
+  },
   methods: {
     NavChange: function(e) {
       console.log(e);
@@ -76,4 +95,7 @@ export default {
 </script>
 
 <style>
+/* page {
+  padding-bottom: 100rpx;
+} */
 </style>

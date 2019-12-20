@@ -13,6 +13,10 @@ Vue.component('plugin', plugin)
 
 import task from './pages/task/task.vue'
 Vue.component('task', task)
+import publish from './pages/task/publish.vue'
+Vue.component('publish', publish)
+import user from './pages/user/user.vue'
+Vue.component('user', user)
 
 import cuCustom from './colorui/components/cu-custom.vue'
 Vue.component('cu-custom', cuCustom)
