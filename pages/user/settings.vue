@@ -16,7 +16,7 @@
         </navigator>
       </view>
       <view class="cu-item" :class="menuArrow?'arrow':''">
-        <navigator hover-class="none" class="block">
+        <navigator hover-class="none" class="block" url="/pages/user/changePassword">
           <view class="content">
             <text class="cuIcon-info text-grey"></text>
             <text class="text-grey">修改登录密码</text>

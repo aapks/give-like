@@ -149,6 +149,10 @@
             "path" : "pages/user/changePhone",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/changePassword",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
