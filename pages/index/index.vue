@@ -69,7 +69,7 @@
 export default {
   data() {
     return {
-      PageCur: "task"
+      PageCur: "user"
     };
   },
   onPullDownRefresh() {
