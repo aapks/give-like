@@ -52,7 +52,6 @@
         <button class="cu-btn block bg-orange margin-top-sm lg">确认发布</button>
       </view>
     </form>
-    <view class="cu-tabbar-height"></view>
   </view>
 </template>
 

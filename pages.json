@@ -145,6 +145,10 @@
             "path" : "pages/user/settings",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/changePhone",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

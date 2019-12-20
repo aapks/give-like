@@ -24,7 +24,7 @@
         </navigator>
       </view>
       <view class="cu-item" :class="menuArrow?'arrow':''">
-        <navigator hover-class="none" class="block">
+        <navigator hover-class="none" class="block" url="/pages/user/changePhone">
           <view class="content">
             <text class="cuIcon-info text-grey"></text>
             <text class="text-grey">更换手机号</text>
