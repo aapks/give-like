@@ -23,7 +23,7 @@
           </view>
         </view>
       </view>
-      <button class="bg-orange block margin-bottom-lg">提交</button>
+      <button class="cu-btn lg bg-orange block margin-bottom-lg">提交</button>
       <text class="text-sm">提示：如上传虚假不合规凭证，将直接取消订单，并处10倍罚款，自动余额扣除，如余额不足，将冻结账号，所有损失自行承担！</text>
     </view>
   </view>

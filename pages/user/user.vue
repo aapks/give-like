@@ -2,7 +2,9 @@
   <view>
     <view class="user-panel padding">
       <view class="margin-bottom-lg text-right">
-        <text class="cuIcon-settings"></text>
+        <navigator url="/pages/user/settings">
+          <text class="cuIcon-settings"></text>
+        </navigator>
       </view>
       <view class="flex justify-between">
         <view class="flex">
@@ -134,7 +136,8 @@ export default {
           cuIcon: "settings",
           color: "black",
           badge: 0,
-          name: "系统设置"
+          name: "系统设置",
+          url: "/pages/user/settings"
         },
         {
           cuIcon: "vipcard",

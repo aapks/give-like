@@ -141,6 +141,10 @@
             "path" : "pages/task/upload",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/settings",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
