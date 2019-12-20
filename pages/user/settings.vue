@@ -8,7 +8,7 @@
       :class="[menuBorder?'sm-border':'',menuCard?'card-menu margin-top':'']"
     >
       <view class="cu-item" :class="menuArrow?'arrow':''">
-        <navigator hover-class="none" class="block">
+        <navigator hover-class="none" class="block" url="/pages/user/setPayPassword">
           <view class="content">
             <text class="cuIcon-info text-grey"></text>
             <text class="text-grey">设置支付密码</text>

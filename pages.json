@@ -153,6 +153,10 @@
             "path" : "pages/user/changePassword",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/setPayPassword",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
