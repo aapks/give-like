@@ -12,7 +12,7 @@
     <form>
       <view class="cu-form-group">
         <view class="title">账号</view>
-        <input type="number" placeholder="请输入手机号码" name="phone" maxlength="11" />
+        <input type="number" v-model="tel" placeholder="请输入手机号码" name="phone" maxlength="11" />
         <view class="cu-capsule radius">
           <view class="cu-tag bg-blue">+86</view>
           <view class="cu-tag line-blue">中国大陆</view>
@@ -20,7 +20,7 @@
       </view>
       <view class="cu-form-group">
         <view class="title">密码</view>
-        <input placeholder="请输入密码" type="password" name="password" />
+        <input placeholder="请输入密码" v-model="pwd" type="password" name="password" />
       </view>
       <view class="padding">
         <button class="cu-btn block bg-orange margin-tb-sm lg" @click="login">立即登录</button>
@@ -43,7 +43,9 @@ import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue";
 export default {
   data() {
     return {
-      more: "more"
+      more: "more",
+	  tel:"",
+	  pwd:""
     };
   },
   components: {
@@ -51,9 +53,48 @@ export default {
   },
   methods: {
     login() {
-      uni.navigateTo({
-        url: "/pages/index/index"
-      });
+		if(this.tel===""){
+			uni.showToast({
+			    title: '请输入手机号',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		if(this.pwd===""){
+			uni.showToast({
+			    title: '请输入密码',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		this.$api.Login({phone:this.tel,password:this.pwd}).then(res=>{
+			if(res.code===1){
+				const _this=this;
+				uni.showToast({
+				    title: '登录成功',
+					icon:'success',
+				    duration: 2000,
+					success:function(){
+						uni.setStorage({
+						    key: 'userinfo',
+						    data:res.data.userProfile,
+						    success: function () {
+								uni.setStorageSync('token',res.data.token);
+						        setTimeout(()=>{
+						        	uni.redirectTo({
+						        		url: '../index/index'
+						        	});
+						        },2000)
+						    }
+						});
+						
+					}
+				});
+				
+			}
+		})
     }
   },
   onPullDownRefresh() {
