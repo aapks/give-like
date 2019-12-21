@@ -169,6 +169,10 @@
             "path" : "pages/user/balance",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/bind",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
