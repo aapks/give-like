@@ -69,9 +69,10 @@
 export default {
   data() {
     return {
-      PageCur: "user"
+      PageCur: "task"
     };
   },
+  
   onPullDownRefresh() {
     console.log("refresh");
     setTimeout(function() {

@@ -903,7 +903,10 @@ button.cuIcon.lg {
 	height: 96upx;
 	font-size: 2em;
 }
-
+.cu-avatar.lg >image{
+	width: 100%;
+	height: 100%;
+}
 .cu-avatar.xl {
 	width: 128upx;
 	height: 128upx;

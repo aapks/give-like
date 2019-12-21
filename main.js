@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import './assets/utils/request'
-
+import * as api from './assets/utils/api';
 import basics from './pages/basics/home.vue'
 Vue.component('basics', basics)
 
@@ -20,6 +19,13 @@ Vue.component('user', user)
 
 import cuCustom from './colorui/components/cu-custom.vue'
 Vue.component('cu-custom', cuCustom)
+// 全局url
+Vue.prototype.websiteUrl = "http://ycdianzan.zhaochuanwei.top";
+//图片拼接
+Vue.prototype.getImgUrl = function (res) {
+  return this.websiteUrl + res;
+}
+Vue.prototype.$api = api;
 
 Vue.config.productionTip = false
 

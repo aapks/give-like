@@ -131,8 +131,12 @@ export default {
   },
   methods: {
     update() {
-      console.log("升级");
-    }
+      this.Jsbridge('demo',66666)
+    },
+	// h5与native通信
+	Jsbridge(functionName, data){
+	    window.DianzanJs && window.DianzanJs[functionName] && window.DianzanJs[functionName](JSON.stringify(data));
+	}
   }
 };
 </script>

@@ -8,8 +8,9 @@
           v-for="(item,index) in navArr"
           :key="index"
           @tap="tabSelect"
-          :data-id="index"
-        >{{item.title}}</view>
+          :id="item.id"
+		  :data-index="index"
+        >{{item.name}}</view>
       </view>
     </scroll-view>
 
@@ -56,24 +57,24 @@
       </view>
     </view>-->
     <view class="cu-list menu-avatar">
-      <view class="cu-item" v-for="item in 7" :key="item">
+      <view class="cu-item" v-for="item in tasklist" :key="item.id">
         <view
           class="cu-avatar radius lg"
-          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
-        ></view>
+        >
+		<image :src="getImgUrl(item.thumb)" mode=""></image></view>
         <view class="content">
           <view class="text-black">
-            抖音
-            <text class="text-sm text-grey margin-left-sm">任务剩余量：2342</text>
+            {{item.cname?item.cname:""}}
+            <text class="text-sm text-grey margin-left-sm">任务剩余量：{{item.sur_num?item.sur_num:0}}</text>
           </view>
           <view class="text-gray text-xs flex justify-between">
-            <view class="text-cut">任务要求: 关注/点赞/评论</view>
-            <view class="text-cut">需求方: xxx</view>
+            <view class="text-cut">任务要求: {{item.type?item.type:""}}</view>
+            <view class="text-cut">需求方:{{item.nickname}}</view>
           </view>
         </view>
         <view class="action">
-          <view class="text-red text-sm text-bold margin-bottom-xs">1.00元</view>
-          <button class="cu-btn bg-orange round sm" @click="takeOrder">接单</button>
+          <view class="text-red text-sm text-bold margin-bottom-xs">{{item.price?item.price:0}}元</view>
+          <button class="cu-btn bg-orange round sm" @click="takeOrder(item.id)">接单</button>
         </view>
       </view>
       <!-- <view class="cu-item">
@@ -174,20 +175,9 @@
 export default {
   data() {
     return {
-      navArr: [
-        {
-          title: "抖音"
-        },
-        {
-          title: "快手"
-        },
-        {
-          title: "火山"
-        },
-        {
-          title: "微视"
-        }
-      ],
+      navArr: [],
+	  tabid:"",
+	  tasklist:[],
       swiperList: [
         {
           id: 0,
@@ -238,22 +228,68 @@ export default {
       loadModal: false
     };
   },
+  onLoad(){
+  		uni.showLoading({
+  			title:"加载中"
+  		})
+  },
+  created(){
+  	  this.$api.Category().then(res=>{
+  		  if(res.code===1){
+			  this.navArr=res.data;
+		  }
+  	  })
+	  this.$api.Task({type:""}).then(res=>{
+  		  if(res.code===1){
+			  this.tasklist=res.data;
+		  }
+  	  })
+	  uni.hideLoading();
+  },
+  
   methods: {
     tabSelect(e) {
-      this.TabCur = e.currentTarget.dataset.id;
+		uni.showLoading({
+			title:"加载中"
+		})
+      this.TabCur = e.currentTarget.dataset.index;
+	  this.tabid=e.target.id;
       this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60;
+	  this.update(e.target.id);
     },
+	update(id){
+		this.$api.Task({cid:id}).then(res=>{
+			if(res.code===1){
+				this.tasklist=res.data;
+			}
+		})
+		uni.hideLoading();
+	},
     cardSwiper(e) {
       this.cardCur = e.detail.current;
     },
-    takeOrder() {
-      // uni.showToast({
-      // 	title: ''
-      // })
+    takeOrder(id) {
       this.loadModal = true;
-      setTimeout(() => {
-        this.loadModal = false;
-      }, 1500);
+	  this.$api.Payorder({task_id:id}).then(res=>{
+	  	if(res.code===1){
+			this.loadModal = false;
+			uni.showToast({
+			    title: '接单成功',
+				icon:'success',
+			    duration: 2000,
+				success: () => {
+					setTimeout(()=>{
+						uni.navigateTo({
+							url:'../task/mytask',
+							animationType: 'pop-in',
+							animationDuration: 200
+						})
+					},1500)
+				}
+			})
+		}
+	  })
+      
     }
   }
 };

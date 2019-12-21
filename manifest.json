@@ -58,6 +58,9 @@
     },
     "h5" : {
         "title" : "点赞",
-        "domain" : "demo.color-ui.com"
+        "domain" : "ceshi.liyq666.top",
+        "router" : {
+            "mode" : "history"
+        }
     }
 }
