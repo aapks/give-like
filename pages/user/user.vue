@@ -27,10 +27,16 @@
 
       <view class="flex">
         <view class="basis-df margin-xs padding-sm radius text-center">
+					<navigator url="/pages/user/balance">
+						
           <view class="text-bold">27563</view>余额
+					</navigator>
         </view>
         <view class="basis-df margin-xs padding-sm radius text-center">
+					<navigator>
+						
           <view class="text-bold">349</view>团队人数
+					</navigator>
         </view>
       </view>
 
@@ -78,7 +84,7 @@ export default {
           name: "升级会员"
         },
         {
-          cuIcon: "recordfill",
+          cuIcon: "selection",
           color: "orange",
           badge: 1,
           name: "我的任务",
@@ -91,10 +97,11 @@ export default {
           name: "推广邀请"
         },
         {
-          cuIcon: "selection",
+          cuIcon: "location",
           color: "olive",
-          badge: 22,
-          name: "任务达人"
+          badge: 0,
+          name: "我的地址",
+					url: "/pages/user/location"
         },
         {
           cuIcon: "home",

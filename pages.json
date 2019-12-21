@@ -157,6 +157,18 @@
             "path" : "pages/user/setPayPassword",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/location",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/address",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/balance",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
