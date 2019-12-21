@@ -3,7 +3,7 @@
 		<cu-custom bgcolor="bg-white" :isBack="true">
 			<block slot="content">余额</block>
 			<block slot="right">
-				<navigator url="/pages/user/address">
+				<navigator url="/pages/user/detail">
 				<view class="margin-right-sm">
 				明细	
 				</view>
