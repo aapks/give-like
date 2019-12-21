@@ -177,6 +177,14 @@
             "path" : "pages/user/detail",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/bindBank",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/bindWx",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

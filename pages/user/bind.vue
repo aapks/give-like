@@ -5,10 +5,12 @@
 		</cu-custom>
 		<view class="cu-list menu text-left solid-top">
 			<view class="cu-item arrow">
-				<view class="content">
-					<text class="cuIcon-circlefill text-grey"></text>
-					<text class="text-grey">绑定微信提现账号</text>
-				</view>
+				<navigator url="/pages/user/bindWx">
+					<view class="content">
+						<text class="cuIcon-circlefill text-grey"></text>
+						<text class="text-grey">绑定微信提现账号</text>
+					</view>
+				</navigator>
 			</view>
 			<view class="cu-item arrow">
 				<view class="content">
@@ -17,10 +19,13 @@
 				</view>
 			</view>
 			<view class="cu-item arrow">
-				<view class="content">
-					<text class="cuIcon-circlefill text-grey"></text>
-					<text class="text-grey">绑定提现银行卡号</text>
-				</view>
+				<navigator url="/pages/user/bindWx">
+					<view class="content">
+						<text class="cuIcon-circlefill text-grey"></text>
+						<text class="text-grey">绑定提现银行卡号</text>
+
+					</view>
+				</navigator>
 			</view>
 		</view>
 	</view>
