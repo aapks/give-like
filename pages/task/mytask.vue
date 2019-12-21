@@ -70,11 +70,11 @@ export default {
   },
   created(){
 	  this.$api.Mytask({id:""}).then(res=>{
-		  console.log(res)
 		  this.tasklist=res.data
 	  })
 	  uni.hideLoading();
   },
+
   methods: {
     tabSelect(e) {
       uni.showLoading({
