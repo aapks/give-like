@@ -185,6 +185,10 @@
             "path" : "pages/user/bindWx",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/bindAliPay",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

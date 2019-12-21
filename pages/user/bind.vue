@@ -13,17 +13,18 @@
 				</navigator>
 			</view>
 			<view class="cu-item arrow">
+				<navigator url="/pages/user/bindAliPay">
 				<view class="content">
 					<text class="cuIcon-circlefill text-grey"></text>
 					<text class="text-grey">绑定支付宝提现账号</text>
 				</view>
+				</navigator>
 			</view>
 			<view class="cu-item arrow">
-				<navigator url="/pages/user/bindWx">
+				<navigator url="/pages/user/bindBank">
 					<view class="content">
 						<text class="cuIcon-circlefill text-grey"></text>
 						<text class="text-grey">绑定提现银行卡号</text>
-
 					</view>
 				</navigator>
 			</view>

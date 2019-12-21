@@ -1,12 +1,12 @@
 <template>
 	<view>
 		<cu-custom bgcolor="bg-white" :isBack="true">
-			<block slot="content">绑定微信</block>
+			<block slot="content">绑定支付宝</block>
 		</cu-custom>
 		<form>
 			<view class="cu-form-group">
-			  <view class="title">微信账号</view>
-			  <input type="text" placeholder="请输入微信账号" />
+			  <view class="title">支付宝账号</view>
+			  <input type="text" placeholder="请输入支付宝账号" />
 			</view>
 		  <view class="cu-form-group">
 		    <view class="title">账号名称</view>
@@ -29,9 +29,6 @@
 			return {
 				
 			};
-		},
-		methods: {
-			save() {}
 		}
 	}
 </script>
