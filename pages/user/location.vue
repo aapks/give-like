@@ -3,7 +3,7 @@
 		<cu-custom bgcolor="bg-white" :isBack="true">
 			<block slot="content">地址</block>
 		</cu-custom>
-		<view class="cu-list menu-avatar">
+		<view class="cu-list menu-avatar" v-for="(item,index) in list" :key="index">
 			<view class="cu-item padding-sm">
 				<view class="block">
 					<view class="margin-bottom-xs flex justify-between">
@@ -64,7 +64,7 @@
 		},
 		async onLoad(){
 			await this.$api.Myaddrsss().then(res=>{
-				
+				this.list=red.data;
 			})
 		},
 		methods: {

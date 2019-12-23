@@ -202,7 +202,20 @@ export default {
 		this.$api.Release({cid:this.cid,nickname:this.nickname,title:this.tasktit,
 		price:this.price*1,max_num:this.number*1,type:this.tasksec,taskurl:this.videourl,
 		end_time:this.data}).then(res=>{
-			console.log(res,"====")
+			if(res.code===1){
+				uni.showToast({
+				  title: "发布成功",
+				  icon: "success",
+				  duration: 2000,
+				  success: function() {
+				    setTimeout(()=>{
+						uni.navigateBack({
+							delta:1
+						})
+					},2000)
+				  }
+				});
+			}
 		})
 	}
   }
