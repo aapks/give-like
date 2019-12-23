@@ -67,12 +67,6 @@
 				
 			})
 		},
-		methods:{
-			address(){
-				uni.navigateTo({
-					url:'./address',
-					animationDuration:200,
-					animationType:'fade-in'
 		methods: {
 			add() {
 				uni.navigateTo({
