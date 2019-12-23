@@ -24,3 +24,5 @@ export const Login = (params) => http.post('/v2/login',params);
 export const Register = (params) => http.post('/v2/register',params);
 //发送验证码
 export const Getcode = (params) => http.post('/v2/merchant_code',params);
+//忘记密码
+export const Forget = (params) => http.put('/v2/fpassword',params);

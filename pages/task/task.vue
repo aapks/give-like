@@ -162,11 +162,11 @@
         </view>
       </view>-->
     </view>
-    <view class="cu-load load-modal" v-if="loadModal">
-      <!-- <view class="cuIcon-emojifill text-orange"></view> -->
+    <!-- <view class="cu-load load-modal" v-if="loadModal">
+      <view class="cuIcon-emojifill text-orange"></view>
       <image src="/static/logo.png" mode="aspectFit" />
       <view class="gray-text">接单中...</view>
-    </view>
+    </view> -->
     <view class="cu-tabbar-height"></view>
   </view>
 </template>
@@ -269,10 +269,12 @@ export default {
       this.cardCur = e.detail.current;
     },
     takeOrder(id) {
-      this.loadModal = true;
+      uni.showLoading({
+      	title:"接单中"
+      })
 	  this.$api.Payorder({task_id:id}).then(res=>{
 	  	if(res.code===1){
-			this.loadModal = false;
+			uni.hideLoading();
 			uni.showToast({
 			    title: '接单成功',
 				icon:'success',

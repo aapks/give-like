@@ -14,7 +14,7 @@
           ></view>
 
           <view class="margin-left-sm">
-            <view class="margin-bottom-xs text-bold">李牧尘</view>
+            <view class="margin-bottom-xs text-bold">{{userinfo.username}}</view>
             <view class="text-sm">信用分: 23</view>
           </view>
         </view>
@@ -76,6 +76,7 @@
 export default {
   data() {
     return {
+		userinfo:{},
       cuIconList: [
         {
           cuIcon: "cardboardfill",
@@ -156,6 +157,17 @@ export default {
       gridCol: 4,
       gridBorder: false
     };
+  },
+  created(){
+	  const userinfo = uni.getStorageSync('userinfo');
+	  console.log(userinfo,"===")
+	  if(userinfo){
+		  this.userinfo=userinfo;
+	  }else{
+		  uni.redirectTo({
+		  	url: '../login/login'
+		  });
+	  }
   },
   methods: {
     update() {
