@@ -113,7 +113,7 @@ export default {
           if (res.code === 1) {
             const _this = this;
             uni.showToast({
-              title: "登录成功",
+              title: "设置成功",
               icon: "success",
               duration: 2000,
               success: function() {

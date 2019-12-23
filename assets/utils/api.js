@@ -31,3 +31,5 @@ export const Forget = (params) => http.put('/v2/fpassword',params);
 
 //设置支付密码
 export const Setpaypwd = (params) => http.put('/v2/paypwd',params);
+//修改密码
+export const Repwd = (params) => http.put('/v2/password',params);
