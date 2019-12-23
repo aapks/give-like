@@ -189,6 +189,14 @@
             "path" : "pages/user/bindAliPay",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/deposit",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/order/order",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

@@ -15,8 +15,8 @@
 			<view class="text-bold text-xxl">￥2568.00</view>
 		</view>
 		<view class="padding">
-			<button class="cu-btn block lg bg-orange margin-bottom-sm">充值</button>
-			<button class="cu-btn block lg bg-green">提现</button>
+			<button class="cu-btn block lg bg-orange margin-bottom-sm" @click="balance">充值</button>
+			<button class="cu-btn block lg bg-green" @click="deposit">提现</button>
 			<navigator class="bind text-center margin-top-xl" url="/pages/user/bind">绑定提现账号</navigator>
 		</view>
 	</view>
@@ -28,6 +28,18 @@
 			return {
 
 			};
+		},
+		methods: {
+			balance() {
+				uni.navigateTo({
+					url: '/pages/user/balance'
+				})
+			},
+			deposit() {
+				uni.navigateTo({
+					url: '/pages/user/deposit'
+				})
+			}
 		}
 	}
 </script>
