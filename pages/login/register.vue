@@ -51,6 +51,16 @@
         <button class="cu-btn block bg-orange margin-tb-sm lg" @click="Register">立即注册</button>
       </view>
     </form>
+	<view class="menus">
+		<view @click="download(1)">
+			<image src="../../static/logo.png" mode=""></image>
+			<text>安卓下载</text>
+		</view>
+		<view @click="download(2)">
+			<image src="../../static/logo.png" mode=""></image>
+			<text>IOS下载</text>
+		</view>
+	</view>
   </view>
 </template>
 
@@ -74,87 +84,97 @@ export default {
     SwitchD(e) {
       this.switchD = e.detail.value;
     },
-    async Register() {
-      if (this.tel === "") {
-        uni.showToast({
-          title: "请输入手机号",
-          icon: "none",
-          duration: 2000
-        });
-        return;
-      }
-      if (this.telcode === "") {
-        uni.showToast({
-          title: "请输入验证码",
-          icon: "none",
-          duration: 2000
-        });
-        return;
-      }
-      if (this.pwd1 === "") {
-        uni.showToast({
-          title: "请输入密码",
-          icon: "none",
-          duration: 2000
-        });
-        return;
-      }
-      if (this.pwd2 === "") {
-        uni.showToast({
-          title: "请再次输入密码",
-          icon: "none",
-          duration: 2000
-        });
-        return;
-      }
-      if (this.pwd1 !== this.pwd2) {
-        uni.showToast({
-          title: "两次密码输入不一致",
-          icon: "none",
-          duration: 2000
-        });
-        return;
-      }
-      if (!this.switchD) {
-        uni.showToast({
-          title: "请先阅读并同意用户协议",
-          icon: "none",
-          duration: 2000
-        });
-        return;
-      }
-      await this.$api
-        .Register({
-          phone: this.tel,
-          phone_code: this.telcode,
-          password: this.pwd2,
-          invite_code: this.code
-        })
-        .then(res => {
-          if (res.code === 1) {
-            const _this = this;
-            uni.showToast({
-              title: "登录成功",
-              icon: "success",
-              duration: 2000,
-              success: function() {
-                uni.setStorage({
-                  key: "userinfo",
-                  data: res.data.userProfile,
-                  success: function() {
-                    uni.setStorageSync("token", res.data.token);
-                    setTimeout(() => {
-                      uni.redirectTo({
-                        url: "../index/index"
-                      });
-                    }, 2000);
-                  }
-                });
-              }
-            });
-          }
-        });
-    }
+	download(val){
+		if(val===1){
+			uni.showToast({
+				icon:'none',
+			    title: '暂未开放',
+			    duration: 2000
+			});
+		}else{
+			uni.showToast({
+				icon:'none',
+			    title: '暂未开放',
+			    duration: 2000
+			});
+		}
+	},
+	async Register(){
+		if(this.tel===""){
+			uni.showToast({
+			    title: '请输入手机号',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		if(this.telcode===""){
+			uni.showToast({
+			    title: '请输入验证码',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		if(this.pwd1===""){
+			uni.showToast({
+			    title: '请输入密码',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		if(this.pwd2===""){
+			uni.showToast({
+			    title: '请再次输入密码',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		if(this.pwd1!==this.pwd2){
+			uni.showToast({
+			    title: '两次密码输入不一致',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		if(!this.switchD){
+			uni.showToast({
+			    title: '请先阅读并同意用户协议',
+				icon:'none',
+			    duration: 2000
+			});
+			return;
+		}
+		await this.$api.Register({phone:this.tel,phone_code:this.telcode,password:this.pwd2,invite_code:this.code}).then(res=>{
+			if(res.code===1){
+				const _this=this;
+				uni.showToast({
+				    title: '登录成功',
+					icon:'success',
+				    duration: 2000,
+					success:function(){
+						uni.setStorage({
+						    key: 'userinfo',
+						    data:res.data.userProfile,
+						    success: function () {
+								uni.setStorageSync('token',res.data.token);
+						        setTimeout(()=>{
+						        	uni.redirectTo({
+						        		url: '../index/index'
+						        	});
+						        },2000)
+						    }
+						});
+						
+					}
+				});
+				
+			}
+		})
+	}
   }
 };
 </script>
@@ -166,5 +186,27 @@ export default {
 .link {
   margin: 0 5px;
   color: #0081ff;
+}
+.menus{
+	height: 100rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	>view{
+		width: 30%;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		>image{
+			width: 60rpx;
+			height: 60rpx;
+			margin-right: 10rpx;
+		}
+		>text{
+			font-size:28rpx;
+			color:#f37b1d;
+		}
+	}
 }
 </style>

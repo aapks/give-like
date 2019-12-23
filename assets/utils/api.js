@@ -11,11 +11,19 @@ export const Task = (params) => http.get('/v2/task?cid='+params.cid);
 export const Payorder = (params) => http.post('/v2/orderApply',params);
 //发布任务
 export const Release = (params) => http.post('/v2/task',params);
+//获取任务类型
+export const taskType = (params) => http.get('/v2/taskType',params);
+
 
 
 //个人中心
 // 我的任务
 export const Mytask = (params) => http.get('/v2/myApply?status='+params.id);
+//我的地址
+export const Myaddrsss = (params) => http.get('/v2/address');
+//添加编辑地址
+
+export const Addrsss = (params) => http.post('/v2/address');
 
 
 // <-----------------------其他----------------------->
