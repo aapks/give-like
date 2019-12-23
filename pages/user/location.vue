@@ -49,7 +49,7 @@
 			</view>
 		</view>
 		<view class="padding">
-			<button class="cu-btn block lg bg-orange">添加地址</button>
+			<button class="cu-btn block lg bg-orange" @click="address">添加地址</button>
 		</view>
 	</view>
 </template>
@@ -58,8 +58,23 @@
 	export default {
 		data() {
 			return {
-				checked: false
+				checked: false,
+				list:[]
 			};
+		},
+		async onLoad(){
+			await this.$api.Myaddrsss().then(res=>{
+				
+			})
+		},
+		methods:{
+			address(){
+				uni.navigateTo({
+					url:'./address',
+					animationDuration:200,
+					animationType:'fade-in'
+				})
+			}
 		}
 	}
 </script>

@@ -51,6 +51,16 @@
         <button class="cu-btn block bg-orange margin-tb-sm lg" @click="Register">立即注册</button>
       </view>
     </form>
+	<view class="menus">
+		<view @click="download(1)">
+			<image src="../../static/logo.png" mode=""></image>
+			<text>安卓下载</text>
+		</view>
+		<view @click="download(2)">
+			<image src="../../static/logo.png" mode=""></image>
+			<text>IOS下载</text>
+		</view>
+	</view>
   </view>
 </template>
 
@@ -74,6 +84,21 @@ export default {
     SwitchD(e) {
       this.switchD = e.detail.value;
     },
+	download(val){
+		if(val===1){
+			uni.showToast({
+				icon:'none',
+			    title: '暂未开放',
+			    duration: 2000
+			});
+		}else{
+			uni.showToast({
+				icon:'none',
+			    title: '暂未开放',
+			    duration: 2000
+			});
+		}
+	},
 	async Register(){
 		if(this.tel===""){
 			uni.showToast({
@@ -161,5 +186,27 @@ export default {
 .link {
   margin: 0 5px;
   color: #0081ff;
+}
+.menus{
+	height: 100rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	>view{
+		width: 30%;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		>image{
+			width: 60rpx;
+			height: 60rpx;
+			margin-right: 10rpx;
+		}
+		>text{
+			font-size:28rpx;
+			color:#f37b1d;
+		}
+	}
 }
 </style>
