@@ -19,7 +19,7 @@
           </view>
         </view>
 
-        <navigator url="/pages/login/login">
+        <navigator>
           个人中心
           <text class="cuIcon-right"></text>
         </navigator>
