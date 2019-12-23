@@ -13,13 +13,13 @@
     <view class="cu-bar tabbar bg-white shadow foot">
       <view class="action" @click="NavChange" data-cur="task">
         <view class="cuIcon-cu-image">
-          <image :src="'/static/tabbar/basics' + [PageCur=='task'?'_cur':''] + '.png'" />
+          <image :src="'/static/tabbar/task' + [PageCur=='task'?'_cur':''] + '.png'" />
         </view>
         <view :class="PageCur=='task'?'text-orange':'text-gray'">任务大厅</view>
       </view>
       <view class="action" @click="NavChange" data-cur="component">
         <view class="cuIcon-cu-image">
-          <image :src="'/static/tabbar/component' + [PageCur == 'component'?'_cur':''] + '.png'" />
+          <image :src="'/static/tabbar/shop' + [PageCur == 'component'?'_cur':''] + '.png'" />
         </view>
         <view :class="PageCur=='component'?'text-orange':'text-gray'">会员商城</view>
       </view>
@@ -29,13 +29,13 @@
       </view>
       <view class="action" @click="NavChange" data-cur="plugin">
         <view class="cuIcon-cu-image">
-          <image :src="'/static/tabbar/plugin' + [PageCur == 'plugin'?'_cur':''] + '.png'" />
+          <image :src="'/static/tabbar/find' + [PageCur == 'plugin'?'_cur':''] + '.png'" />
         </view>
         <view :class="PageCur=='plugin'?'text-orange':'text-gray'">发现</view>
       </view>
       <view class="action" @click="NavChange" data-cur="user">
         <view class="cuIcon-cu-image">
-          <image :src="'/static/tabbar/plugin' + [PageCur == 'user'?'_cur':''] + '.png'" />
+          <image :src="'/static/tabbar/user' + [PageCur == 'user'?'_cur':''] + '.png'" />
         </view>
         <view :class="PageCur=='user'?'text-orange':'text-gray'">我的</view>
       </view>

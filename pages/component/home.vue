@@ -1,6 +1,7 @@
 <template name="components">
 	<view>
-		<scroll-view scroll-y class="page">
+		暂未开放
+		<!-- <scroll-view scroll-y class="page">
 			<image src="/static/componentBg.png" mode="widthFix" class="response"></image>
 			<view class="nav-list">
 				<navigator hover-class='none' :url="'/pages/component/' + item.name" class="nav-li" navigateTo :class="'bg-'+item.color"
@@ -11,7 +12,7 @@
 				</navigator>
 			</view>
 			<view class="cu-tabbar-height"></view>
-		</scroll-view>
+		</scroll-view> -->
 	</view>
 </template>
 

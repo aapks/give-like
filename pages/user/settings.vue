@@ -58,7 +58,7 @@ export default {
     return {
       menuBorder: false,
       menuCard: false,
-      menuArrow:''
+			menuArrow: false
     };
   },
   methods: {

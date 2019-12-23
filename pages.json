@@ -197,6 +197,18 @@
             "path" : "pages/order/order",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/authentication",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/openAccount",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/account",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

@@ -49,7 +49,7 @@
 			</view>
 		</view>
 		<view class="padding">
-			<button class="cu-btn block lg bg-orange" @click="address">添加地址</button>
+			<button class="cu-btn block lg bg-orange" @click="add">添加地址</button>
 		</view>
 	</view>
 </template>
@@ -73,6 +73,10 @@
 					url:'./address',
 					animationDuration:200,
 					animationType:'fade-in'
+		methods: {
+			add() {
+				uni.navigateTo({
+					url: '/pages/user/address'
 				})
 			}
 		}
