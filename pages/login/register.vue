@@ -12,7 +12,7 @@
     <form>
       <view class="cu-form-group">
         <view class="title">账号</view>
-        <input type="number" placeholder="请输入手机号码" v-model="tel" name="phone" maxlength="11" />
+        <input type="number" placeholder="请输入手机号码" v-model="tel" name="phone" maxlength="11">
         <view class="cu-capsule radius">
           <view class="cu-tag bg-blue">+86</view>
           <view class="cu-tag line-blue">中国大陆</view>
@@ -20,20 +20,20 @@
       </view>
       <view class="cu-form-group">
         <view class="title">验证码</view>
-        <input type="number" v-model="telcode" placeholder="输入框带个按钮" name="code" maxlength="6" />
+        <input type="number" v-model="telcode" placeholder="输入框带个按钮" name="code" maxlength="6">
         <button class="cu-btn bg-green shadow" :disabled="disabled" @click="getCode">{{codeText}}</button>
       </view>
       <view class="cu-form-group">
         <view class="title">登录密码</view>
-        <input placeholder="请输入密码" type="password" v-model="pwd1" name="password" />
+        <input placeholder="请输入密码" type="password" v-model="pwd1" name="password">
       </view>
       <view class="cu-form-group">
         <view class="title">确认密码</view>
-        <input placeholder="重新输入密码" type="password" v-model="pwd2" name="confirmpassword" />
+        <input placeholder="重新输入密码" type="password" v-model="pwd2" name="confirmpassword">
       </view>
       <view class="cu-form-group">
         <view class="title">邀请码</view>
-        <input placeholder="没有可不填" v-model="code" type="text" />
+        <input placeholder="没有可不填" v-model="code" type="text">
       </view>
       <view class="cu-form-group">
         <view class="text-xs">
@@ -73,11 +73,11 @@ export default {
       switchD: false,
       disabled: false,
       codeText: "获取验证码",
-	  tel:"",
-	  telcode:"",
-	  pwd1:"",
-	  pwd2:"",
-	  code:""
+      tel: "",
+      telcode: "",
+      pwd1: "",
+      pwd2: "",
+      code: ""
     };
   },
   methods: {
@@ -181,7 +181,7 @@ export default {
 
 <style lang="scss">
 .logo {
-  height:280rpx;
+  height: 280rpx;
 }
 .link {
   margin: 0 5px;
