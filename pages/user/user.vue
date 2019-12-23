@@ -81,7 +81,8 @@ export default {
           cuIcon: "cardboardfill",
           color: "red",
           badge: 0,
-          name: "升级会员"
+          name: "升级会员",
+					url: '/pages/user/openAccount'
         },
         {
           cuIcon: "selection",
@@ -131,7 +132,8 @@ export default {
           cuIcon: "addressbook",
           color: "purple",
           badge: 0,
-          name: "实名认证"
+          name: "实名认证",
+					url: '/pages/user/authentication'
         },
         {
           cuIcon: "brandfill",
