@@ -156,7 +156,7 @@ export default {
 
 <style lang="scss">
 .logo {
-  height: 400rpx;
+  height:280rpx;
 }
 .link {
   margin: 0 5px;

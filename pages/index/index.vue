@@ -88,7 +88,7 @@ export default {
   },
   methods: {
     NavChange: function(e) {
-      console.log(e);
+      // console.log(e);
       this.PageCur = e.currentTarget.dataset.cur;
     }
   }

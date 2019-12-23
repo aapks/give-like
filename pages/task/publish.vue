@@ -3,8 +3,8 @@
     <form>
       <view class="cu-form-group margin-top">
         <view class="title">平台选择</view>
-        <picker @change="PickerChange" :value="index" :range="picker">
-          <view class="picker">{{ picker[index] }}</view>
+        <picker @change="PickerChange" :value="index" range-key="name" :range="picker">
+          <view class="picker">{{ picker[index].name }}</view>
         </picker>
       </view>
       <view class="cu-form-group">
@@ -59,8 +59,9 @@
 export default {
   data() {
     return {
-      index: 0,
-      picker: ["抖音", "快手", "火山", "微视"],
+      cid:"",
+	  index:0,
+      picker: [],
       date: "2018-12-25",
       checkbox: [
         {
@@ -81,9 +82,23 @@ export default {
       ]
     };
   },
+  created(){
+	  this.$api.Category().then(res=>{
+		if(res.code===1){
+			 this.picker=res.data;
+			 this.cid=res.data[0].id;
+		 }
+	})
+  },
+  onShow(){
+	  console.log("-----")
+  },
   methods: {
     PickerChange(e) {
+		console.log(e,"====")
       this.index = e.detail.value;
+	  console.log(this.picker[e.detail.value])
+	  this.cid=this.picker[e.detail.value].id;
     },
     DateChange(e) {
       this.date = e.detail.value;

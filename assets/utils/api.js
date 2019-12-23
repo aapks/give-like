@@ -9,6 +9,8 @@ export const Category = (params) => http.get('/v2/taskCategory');
 export const Task = (params) => http.get('/v2/task?cid='+params.cid);
 // 接单
 export const Payorder = (params) => http.post('/v2/orderApply',params);
+//发布任务
+export const Release = (params) => http.post('/v2/task',params);
 
 
 //个人中心
