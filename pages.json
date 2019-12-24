@@ -38,6 +38,10 @@
 			"style": {}
 		},
 		{
+			"path": "pages/user/upload",
+			"style": {}
+		},
+		{
 			"path": "pages/basics/tag",
 			"style": {}
 		},
@@ -215,6 +219,10 @@
         }
         ,{
             "path" : "pages/user/team",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/userSettings",
             "style" : {}
         }
     ],
