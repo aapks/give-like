@@ -59,7 +59,7 @@
       </swiper-item>
     </swiper> -->
 
-    <view class="notic text-sm flex justify-start align-center" style="padding: 0 30rpx;">
+    <view class="notic text-sm flex justify-start align-center" style="padding: 0 30rpx;border-bottom: 7px solid #f7f7f7;">
       <image style="width:140rpx;height:32rpx;padding-right:20rpx;border-right:1px solid #c7c7c7; margin-right:20rpx;" src="../../static/zuixinxiaoxi@2x.png"></image>
       恭喜<text class="text-orange">我怀念的</text>成功提现<text class="text-orange">￥4000</text></view>
     <view class="cu-bar bg-white">
@@ -85,7 +85,7 @@
             {{item.cname?item.cname:""}}
             <text class="text-sm text-grey margin-left-sm">任务剩余量：{{item.sur_num?item.sur_num:0}}</text>
           </view>
-          <view class="text-gray text-xs">
+          <view class="text-gray" style="font-size: 12px;">
             <view class="text-cut">任务要求: {{item.type?item.type:""}}</view>
             <view class="text-cut">需求方:{{item.nickname}}</view>
             <view class="paystate">已付款</view>
@@ -93,7 +93,7 @@
         </view>
         <view class="action">
           <view class="text-orange text-sm text-bold margin-bottom-xs">{{item.price?item.price:0}}元</view>
-          <button class="cu-btn bg-orange round sm margin-top-lg" @click="takeOrder(item.id)">接单</button>
+          <button class="cu-btn bg-orange sm round margin-top-lg" style="font-size: 15px;" @click="takeOrder(item.id)">接单</button>
         </view>
       </view>
       <!-- <view class="cu-item">
@@ -321,10 +321,11 @@ export default {
   height: 100vh;
 }
 .notic {
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 88rpx;
+  line-height: 88rpx;
   text-indent: 20rpx;
   color: #999999;
+  font-size: 14px;
   // background-color: beige;
 }
 .text-lg {
@@ -361,5 +362,9 @@ export default {
 .cu-list.menu-avatar>.cu-item:after {
   border-bottom-width: 14rpx;
   border-color: #F7F7F7;
+}
+.cur {
+  font-size: 17px;
+  font-weight: bold;
 }
 </style>

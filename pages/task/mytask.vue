@@ -25,18 +25,18 @@
 		 </view>
         <view class="content">
           <view class="text-black">
-            {{item.cname}}
+            <text class="text-bold">{{item.cname}}</text>
             <!-- <text class="text-sm text-grey margin-left-sm">任务剩余量：{{item.}}</text> -->
+						<view class="cu-tag radius xs bg-gray margin-left-sm">复制地址抖音打开</view>
           </view>
-						<view class="cu-tag radius xs bg-gray">复制地址抖音打开</view>
-          <view class="text-gray text-xs flex justify-between">
+          <view class="text-gray" style="font-size: 12px;">
             <view class="text-cut">任务要求: {{item.task_title}}</view>
             <view class="text-cut">需求方:{{item.master_name}}</view>
           </view>
         </view>
         <view class="action">
-          <view class="text-red text-sm text-bold margin-bottom-xs">{{item.price?item.price:0}}元</view>
-          <button class="cu-btn bg-blue round sm" @click="takeOrder">上传凭证</button>
+          <view class="text-orange text-sm text-bold">{{item.price?item.price:0}}元</view>
+          <button class="cu-btn bg-blue round sm margin-top-lg" style="font-size: 15px;" @click="takeOrder">上传凭证</button>
         </view>
       </view>
     </view>
@@ -114,8 +114,16 @@ export default {
 }
 .cu-list.menu-avatar > .cu-item .content {
   width: calc(100% - 52px - 33px - 80px - 11px);
+  left: 170rpx;
 }
 .cu-list.menu-avatar > .cu-item .action {
   width: 160rpx;
+}
+.cu-avatar {
+  width: 120rpx;
+  height: 120rpx;
+}
+.cu-list.menu-avatar>.cu-item {
+  height: 220rpx;
 }
 </style>

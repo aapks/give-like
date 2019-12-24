@@ -301,7 +301,7 @@ export default {
 }
 .cu-list.grid>.cu-item uni-text {
   margin-top: 0;
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
 }
 .menu {
@@ -317,7 +317,7 @@ export default {
   }
   &-text {
     margin-top: 20rpx;
-    font-size: 12px;
+    font-size: 14px;
     color: #666;
   }
 }
