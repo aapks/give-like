@@ -10,9 +10,15 @@
 				</navigator>
 				</block>
 		</cu-custom>
-		<view class="flex justify-center align-center flex-direction main">
-			<view class="text-grey margin-bottom-sm">我的余额</view>
-			<view class="text-bold text-xxl">￥2568.00</view>
+		<view class="flex justify-center align-center main">
+			<view class="text-center basis-df">
+				<view class="text-grey margin-bottom-sm">我的余额</view>
+				<view class="text-bold text-xxl">￥2568.00</view>
+			</view>
+			<view class="text-center basis-df">
+				<view class="text-grey margin-bottom-sm">今日收益</view>
+				<view class="text-bold text-xxl">￥568.00</view>
+			</view>
 		</view>
 		<view class="padding">
 			<button class="cu-btn block lg bg-orange margin-bottom-sm" @click="balance">充值</button>
@@ -32,7 +38,7 @@
 		methods: {
 			balance() {
 				uni.navigateTo({
-					url: '/pages/user/balance'
+					url: '/pages/user/recharge'
 				})
 			},
 			deposit() {

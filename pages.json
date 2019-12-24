@@ -209,6 +209,10 @@
             "path" : "pages/user/account",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/recharge",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

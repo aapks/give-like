@@ -332,4 +332,7 @@ export default {
   padding: 4rpx;
   border-radius: 4px;
 }
+.cu-list.menu-avatar>.cu-item {
+  align-items: flex-start;
+}
 </style>
