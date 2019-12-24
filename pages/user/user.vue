@@ -3,7 +3,8 @@
     <view class="user-panel padding" style="padding-bottom:0;">
       <view class="margin-bottom-lg text-right">
         <navigator url="/pages/user/settings">
-          <text class="cuIcon-settings"></text>
+          <!-- <text class="cuIcon-settings"></text> -->
+          <image style="width: 36rpx;height: 40rpx;" src="../../static/settings.png"/>
         </navigator>
       </view>
       
