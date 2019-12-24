@@ -73,6 +73,8 @@
 		},
 		methods: {
 			DateChange(e) {
+				console.log( e.detail.value);
+				
 				this.date = e.detail.value
 			},
 			RadioChange(e) {
