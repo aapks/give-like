@@ -24,7 +24,8 @@
         <view :class="PageCur=='component'?'text-orange':'text-gray'">会员商城</view>
       </view>
       <view class="action text-gray add-action" @click="NavChange" data-cur="publish">
-        <button class="cu-btn cuIcon-add bg-orange shadow"></button>
+        <button class="cu-btn cuIcon-camerafill bg-orange shadow">
+        </button>
       </view>
       <view class="action" @click="NavChange" data-cur="plugin">
         <view class="cuIcon-cu-image">
@@ -98,4 +99,7 @@ export default {
 /* page {
   padding-bottom: 100rpx;
 } */
+.cu-bar.tabbar .action.add-action [class*="cuIcon-"] {
+  background-image: url('../../static/tabbar/fabu@2x.png');
+}
 </style>

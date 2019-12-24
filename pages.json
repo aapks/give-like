@@ -213,6 +213,10 @@
             "path" : "pages/user/recharge",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/team",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

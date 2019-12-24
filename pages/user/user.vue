@@ -1,6 +1,6 @@
 <template>
-  <view>
-    <view class="user-panel padding">
+  <view class="page">
+    <view class="user-panel padding" style="padding-bottom:0;">
       <view class="margin-bottom-lg text-right">
         <navigator url="/pages/user/settings">
           <text class="cuIcon-settings"></text>
@@ -15,13 +15,14 @@
           ></view>
 
           <view class="margin-left-sm">
-            <view class="margin-bottom-xs text-bold">{{userinfo.username}}</view>
-            <view class="text-sm">信用分: 23</view>
+            <view class="margin-bottom-xs text-bold username">{{userinfo.username}}
+              <image class="vip" src="../../static/vip@2x.png"></image>
+            </view>
+            <view class="text-sm scoped">信用分: 23</view>
           </view>
         </view>
 
         <navigator>
-          个人中心
           <text class="cuIcon-right"></text>
         </navigator>
       </view>
@@ -30,28 +31,30 @@
         <view class="basis-df margin-xs padding-sm radius text-center">
 					<navigator url="/pages/user/balance">
 						
-          <view class="text-bold">27563</view>余额
+          <view class="text-bold" style="font-size: 18px;">27563</view>
+          <view style="color:#666;font-size: 10px;margin-top:10rpx;">余额</view>
 					</navigator>
         </view>
         <view class="basis-df margin-xs padding-sm radius text-center">
-					<navigator>
+					<navigator url="/pages/user/team">
 						
-          <view class="text-bold">349</view>团队人数
+          <view class="text-bold" style="font-size: 18px;">349</view>
+          <view style="color:#666;font-size: 10px;margin-top:10rpx;">团队人数</view>
 					</navigator>
         </view>
       </view>
 
-      <view class="flex justify-between bg-blue radius padding">
+      <!-- <view class="flex justify-between bg-blue radius padding">
         <view class="flex justify-between align-center text-sm">
           <view class="cu-tag radius bg-red">尊享会员</view>
           <view class="margin-left-sm">升级尊享会员，享更多权益</view>
         </view>
 
         <button class="cu-btn bg-orange radius sm" @click="update">即刻升级</button>
-      </view>
+      </view> -->
     </view>
 
-    <view class="cu-bar bg-white">
+    <!-- <view class="cu-bar bg-white">
       <view class="action">
         <text class="cuIcon-title text-orange"></text>
         <text>更多服务</text>
@@ -68,6 +71,75 @@
           <text>{{item.name}}</text>
         </navigator>
       </view>
+    </view> -->
+    <view class="padding">
+      <view class="bar flex justify-between padding-sm">
+        <image style="width: 164rpx;height: 29rpx;" src="../../static/zumxiamhhuiyuan@2x.png"></image>
+        <text class="text-white text-sm">升级尊享会员,享受更多权益</text>
+        <navigator>
+          <image style="width: 131rpx;height: 37rpx;" src="../../static/likeshengji@2x.png"></image>
+        </navigator>
+      </view>
+       <view class="panel">
+         <view class="panel-title">我的订单</view>
+         <view class="panel-body">
+           <view class="menu grid col-5">
+             <view>
+
+             <navigator class="menu-nav">
+               <image src="../../static/daifukuan@2x.png" class="menu-icon"></image>
+               <view class="menu-text">待付款</view>
+             </navigator>
+             </view>
+             <view>
+             <navigator class="menu-nav">
+               <image src="../../static/daifahuo@2x.png" class="menu-icon"></image>
+               <view class="menu-text">待发货</view>
+             </navigator>
+             </view>
+             <view>
+             <navigator class="menu-nav">
+               <image src="../../static/daishouhuo@2x.png" class="menu-icon"></image>
+               <view class="menu-text">待收货</view>
+             </navigator>
+             </view>
+             <view>
+             <navigator class="menu-nav">
+               <image src="../../static/daipingjia@2x.png" class="menu-icon"></image>
+               <view class="menu-text">待评价</view>
+             </navigator>
+             </view>
+             <view>
+             <navigator class="menu-nav">
+               <image src="../../static/tuikuan@2x.png" class="menu-icon"></image>
+               <view class="menu-text">退款/售后</view>
+             </navigator>
+             </view>
+           </view>
+         </view>
+       </view>
+
+
+      <view class="panel">
+        <view class="panel-title">更多服务</view>
+        <view class="panel-body">
+  <view class="cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
+        <view class="cu-item" v-for="(item,index) in cuIconList" :key="index" v-if="index<gridCol*3">
+          <navigator :url="item.url">
+            <!-- :class="['cuIcon-' + item.cuIcon,'text-' + item.color]" -->
+            <view>
+              <image class="icon" :src="item.cuIcon"></image>
+              <view class="cu-tag badge" v-if="item.badge!=0">
+                <block v-if="item.badge!=1">{{item.badge>99?'99+':item.badge}}</block>
+              </view>
+            </view>
+            <text>{{item.name}}</text>
+          </navigator>
+        </view>
+      </view>
+      </view>
+    </view>
+
     </view>
     <view class="cu-tabbar-height"></view>
   </view>
@@ -80,81 +152,82 @@ export default {
 		userinfo:{},
       cuIconList: [
         {
-          cuIcon: "cardboardfill",
+          cuIcon: "../../static/huiyuan.png",
           color: "red",
           badge: 0,
           name: "升级会员",
 					url: '/pages/user/openAccount'
         },
         {
-          cuIcon: "selection",
+          cuIcon: "../../static/renwu@2x.png",
           color: "orange",
-          badge: 1,
+          badge: 0,
           name: "我的任务",
           url: "/pages/task/mytask"
         },
         {
-          cuIcon: "order",
+          cuIcon: "../../static/tuiguangyaoqing@2x.png",
           color: "yellow",
           badge: 0,
           name: "推广邀请"
         },
         {
-          cuIcon: "location",
+          cuIcon: "../../static/renwudaren@2x.png",
           color: "olive",
           badge: 0,
           name: "我的地址",
 					url: "/pages/user/location"
         },
         {
-          cuIcon: "home",
-          color: "cyan",
-          badge: 0,
-          name: "超级店主"
-        },
-        {
-          cuIcon: "like",
+          cuIcon: "../../static/wodeshoucang@2x.png",
           color: "red",
           badge: 0,
           name: "我的收藏"
         },
         {
-          cuIcon: "friendfavor",
+          cuIcon: "../../static/kaitongxiaodian@2x.png",
+          color: "cyan",
+          badge: 0,
+          name: "开通小店"
+        },
+        
+        {
+          cuIcon: "../../static/chaojidianzhu@2x.png",
           color: "purple",
           badge: 0,
-          name: "我的关注"
+          name: "超级店主"
         },
         {
-          cuIcon: "upstagefill",
+          cuIcon: "../../static/paihangbang@2x.png",
           color: "yellow",
           badge: 0,
           name: "排行榜"
         },
         {
-          cuIcon: "addressbook",
+          cuIcon: "../../static/shimingrenzhneg@2x.png",
           color: "purple",
           badge: 0,
           name: "实名认证",
 					url: '/pages/user/authentication'
         },
         {
-          cuIcon: "brandfill",
+          cuIcon: "../../static/shangjiahezuo@2x.png",
           color: "mauve",
           badge: 0,
           name: "商家合作"
         },
         {
-          cuIcon: "settings",
+          cuIcon: "../../static/mingpian@2x.png",
+          color: "blue",
+          badge: 0,
+          name: "我的名片"
+        },
+        {
+          cuIcon: "../../static/shezhi@2x.png",
           color: "black",
           badge: 0,
           name: "系统设置",
           url: "/pages/user/settings"
-        },
-        {
-          cuIcon: "vipcard",
-          color: "blue",
-          badge: 0,
-          name: "我的名片"
         }
       ],
       gridCol: 4,
@@ -185,4 +258,82 @@ export default {
 </script>
 
 <style lang="scss">
+.page {
+  min-height: 100vh;
+  background-color: rgb(248, 248, 248)!important;
+}
+.cu-avatar {
+  width: 138rpx;
+  height: 138rpx;
+}
+.username {
+  margin-top: 20rpx;
+  font-size: 18px;
+  color: #2d2d2d;
+}
+.scoped {
+  display: inline-block;
+  padding: 4rpx 10rpx;
+  border-radius: 10px;
+  background-color: rgba(254,146,39,.19);
+  font-size: 12px;
+  color: #2d2d2d;
+}
+.panel {
+  // background-color: #fff;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  border-radius: 8px;
+  &-title {
+    padding: 30rpx;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  &-body {
+    // padding: 30rpx;
+  }
+}
+.icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+.cu-list.grid>.cu-item uni-text {
+  margin-top: 0;
+  font-size: 12px;
+  color: #666;
+}
+.menu {
+  width: 100%;
+  padding: 45rpx 30rpx 30rpx;
+  &-nav {
+    display: block;
+    text-align: center;
+  }
+  &-icon {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  &-text {
+    margin-top: 20rpx;
+    font-size: 12px;
+    color: #666;
+  }
+}
+.vip {
+  width: 60rpx;
+  height: 30rpx;
+  margin-left: 14rpx;
+}
+.cuIcon-right {
+ position: relative;
+ top: 55rpx;
+}
+.bar {
+  height: 76rpx;
+  background-image: url('../../static/bg@2x.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 </style>

@@ -24,7 +24,7 @@
     <view class="padding">
       <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
       :autoplay="true" interval="5000" duration="500">
-        <swiper-item v-for="(item,index) in swiperList" :key="index" class="radius">
+        <swiper-item v-for="(item,index) in swiperList" :key="index" class="radius" style="border-radius: 8px;">
           <image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
           <video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
         </swiper-item>
@@ -59,11 +59,13 @@
       </swiper-item>
     </swiper> -->
 
-    <view class="notic text-sm">恭喜<text class="text-orange">我怀念的</text>成功提现<text class="text-orange">￥4000</text></view>
+    <view class="notic text-sm flex justify-start align-center" style="padding: 0 30rpx;">
+      <image style="width:140rpx;height:32rpx;padding-right:20rpx;border-right:1px solid #c7c7c7; margin-right:20rpx;" src="../../static/zuixinxiaoxi@2x.png"></image>
+      恭喜<text class="text-orange">我怀念的</text>成功提现<text class="text-orange">￥4000</text></view>
     <view class="cu-bar bg-white">
       <view class="action">
-        <text class="cuIcon-title text-orange"></text>
-        <text>推荐任务</text>
+        <!-- <text class="cuIcon-title text-orange"></text> -->
+        <text class="text-bold text-black" style="border-left: 6rpx solid #FF8733;text-indent:10rpx;">推荐任务</text>
       </view>
     </view>
     <!-- <view class="cu-bar bg-white">
@@ -90,8 +92,8 @@
           </view>
         </view>
         <view class="action">
-          <view class="text-red text-sm text-bold margin-bottom-xs">{{item.price?item.price:0}}元</view>
-          <button class="cu-btn bg-orange round sm" @click="takeOrder(item.id)">接单</button>
+          <view class="text-orange text-sm text-bold margin-bottom-xs">{{item.price?item.price:0}}元</view>
+          <button class="cu-btn bg-orange round sm margin-top-lg" @click="takeOrder(item.id)">接单</button>
         </view>
       </view>
       <!-- <view class="cu-item">
@@ -329,7 +331,9 @@ export default {
   font-size: 24px;
 }
 .cu-list.menu-avatar>.cu-item .content {
-  line-height: 1.1em;
+  line-height: 1.3em;
+  width: calc(100% - 52px - 33px - 66px - 11px);
+  left: 90px;
 }
 .paystate {
   display: inline-block;
@@ -341,9 +345,21 @@ export default {
 }
 .cu-list.menu-avatar>.cu-item {
   margin-top: 15rpx;
+  height: 90px;
   align-items: flex-start;
 }
 .screen-swiper {
   min-height: 300rpx;
+}
+.cu-avatar {
+  width: 120rpx;
+  height: 119rpx;
+}
+.cu-bar {
+  min-height: 35px;
+}
+.cu-list.menu-avatar>.cu-item:after {
+  border-bottom-width: 14rpx;
+  border-color: #F7F7F7;
 }
 </style>
