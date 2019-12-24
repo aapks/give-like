@@ -1,39 +1,34 @@
 <template>
   <view class="page">
     <view class="flex align-center">
-
-    <scroll-view scroll-x class="bg-white nav">
-      <view class="flex text-center">
-        <view
-          class="cu-item flex-sub"
-          :class="index==TabCur?'text-orange cur':''"
-          v-for="(item,index) in navArr"
-          :key="index"
-          @tap="tabSelect"
-          :id="item.id"
-		  :data-index="index"
-        >{{item.name}}</view>
-      </view>
-    </scroll-view>
-
-    <view class="padding-sm">
-      <navigator url="/pages/task/publish">
-        <text class="text-lg text-gray cuIcon-roundadd"></text>
-      
-      </navigator>
-    </view> 
+      <scroll-view scroll-x class="bg-white nav">
+        <view class="flex text-center">
+          <view
+            class="cu-item flex-sub"
+            :class="index==TabCur?'text-orange cur':''"
+            v-for="(item,index) in navArr"
+            :key="index"
+            @tap="tabSelect"
+            :id="item.id"
+        :data-index="index"
+          >{{item.name}}</view>
+        </view>
+      </scroll-view>
+      <view class="padding-sm">
+        <navigator url="/pages/task/publish">
+          <text class="text-lg text-gray cuIcon-roundadd"></text>
+        </navigator>
+      </view> 
     </view>
 
     <view class="padding">
-
-    
-  <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
-		 :autoplay="true" interval="5000" duration="500">
-			<swiper-item v-for="(item,index) in swiperList" :key="index" class="radius">
-				<image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
-				<video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
-			</swiper-item>
-		</swiper>
+      <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
+      :autoplay="true" interval="5000" duration="500">
+        <swiper-item v-for="(item,index) in swiperList" :key="index" class="radius">
+          <image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
+          <video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
+        </swiper-item>
+      </swiper>
     </view>
     <!-- <swiper
       class="card-swiper"
@@ -82,7 +77,7 @@
         <view
           class="cu-avatar radius lg"
         >
-		<image :src="getImgUrl(item.thumb)" mode=""></image></view>
+		    <image :src="getImgUrl(item.thumb)" mode=""></image></view>
         <view class="content">
           <view class="text-black">
             {{item.cname?item.cname:""}}

@@ -28,8 +28,8 @@
             {{item.cname}}
             <!-- <text class="text-sm text-grey margin-left-sm">任务剩余量：{{item.}}</text> -->
           </view>
-          <view class="text-gray text-xs flex justify-between">
 						<view class="cu-tag radius xs bg-gray">复制地址抖音打开</view>
+          <view class="text-gray text-xs flex justify-between">
             <view class="text-cut">任务要求: {{item.task_title}}</view>
             <view class="text-cut">需求方:{{item.master_name}}</view>
           </view>
