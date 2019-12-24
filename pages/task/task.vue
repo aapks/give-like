@@ -24,7 +24,18 @@
     </view> 
     </view>
 
-    <swiper
+    <view class="padding">
+
+    
+  <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
+		 :autoplay="true" interval="5000" duration="500">
+			<swiper-item v-for="(item,index) in swiperList" :key="index" class="radius">
+				<image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
+				<video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
+			</swiper-item>
+		</swiper>
+    </view>
+    <!-- <swiper
       class="card-swiper"
       :class="dotStyle?'square-dot':'round-dot'"
       :indicator-dots="true"
@@ -51,9 +62,9 @@
           ></video>
         </view>
       </swiper-item>
-    </swiper>
+    </swiper> -->
 
-    <view class="notic text-sm">这里是公告内容，这里是公告内容</view>
+    <view class="notic text-sm">恭喜<text class="text-orange">我怀念的</text>成功提现<text class="text-orange">￥4000</text></view>
     <view class="cu-bar bg-white">
       <view class="action">
         <text class="cuIcon-title text-orange"></text>
@@ -316,7 +327,8 @@ export default {
   height: 80rpx;
   line-height: 80rpx;
   text-indent: 20rpx;
-  background-color: beige;
+  color: #999999;
+  // background-color: beige;
 }
 .text-lg {
   font-size: 24px;
@@ -335,5 +347,8 @@ export default {
 .cu-list.menu-avatar>.cu-item {
   margin-top: 15rpx;
   align-items: flex-start;
+}
+.screen-swiper {
+  min-height: 300rpx;
 }
 </style>
