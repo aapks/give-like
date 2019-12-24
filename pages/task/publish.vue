@@ -16,15 +16,15 @@
         <view class="title">任务标题</view>
         <input type="text" v-model="tasktit" placeholder="请输入标题" />
       </view>
-
+ 			<view class="cu-form-group">
+        <view class="title">任务数量</view>
+        <input type="number" v-model="number" placeholder="请输入数量" />
+      </view>
       <view class="cu-form-group">
         <view class="title">任务单价</view>
         <input type="number" v-model="price" placeholder="请输入单价" />
       </view>
-      <view class="cu-form-group">
-        <view class="title">任务数量</view>
-        <input type="number" v-model="number" placeholder="请输入数量" />
-      </view>
+     
 
       <view class="cu-form-group">
         <view class="title">任务类型</view>
@@ -50,11 +50,24 @@
           <view class="picker">{{date}}</view>
         </picker>
       </view>
+
+			 <view class="cu-form-group">
+        <view class="title">可选置顶</view>
+        <input type="text" v-model="price" placeholder="今日 最高出价500元" />
+				<button class="cu-btn sm bg-blue">输入置顶竞价</button>
+      </view>
       <view class="padding">
         <view
           class="text-sm bg-gray light radius padding-sm"
         >次日零点生效，如竞价成功，次日显示在置顶推荐任务栏中，按出价由高至底排序，非必选项，涨粉效果更快！</view>
-        <button class="cu-btn block bg-orange margin-top-sm lg" @click="Agent">确认发布</button>
+				<view class="flex justify-between">
+					<view class="margin-top-sm">
+						<view>合计：¥1200.00 元</view>
+						<view>账户余额：200  余额不足  <navigator class="toBalance text-bold text-orange" url="/pages/user/balance">请充值</navigator></view>
+					</view>
+        <button class="cu-btn bg-orange sm margin-top-sm lg" @click="Agent">确认发布</button>
+
+				</view>
       </view>
     </form>
   </view>
@@ -70,7 +83,8 @@ export default {
 	  price:"",
 	  number:"",
 	  tasksec:"",
-	  videourl:"",
+		videourl:"",
+		price: '',
 	  index:0,
       picker: [],
       date: "2019-12-24",
@@ -223,4 +237,8 @@ export default {
 </script>
 
 <style lang="scss">
+	.toBalance {
+		display: inline-block;
+		text-decoration: underline;
+	}
 </style>
