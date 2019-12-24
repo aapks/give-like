@@ -3,7 +3,7 @@
 		<cu-custom bgcolor="bg-white" :isBack="true">
 			<block slot="content">充值</block>
 		</cu-custom>
-		<form action=""></form>
+		<form>
 
 		<view class="cu-form-group">充值金额</view>
 		<view class="cu-form-group text-bold text-lg">
