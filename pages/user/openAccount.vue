@@ -35,6 +35,7 @@
 		  <swiper-item v-for="(item,index) in swiperList" :key="index" :class="cardCur==index?'cur':''">
 		    <view class="swiper-item">
 		      <image :src="item.url" mode="aspectFill" v-if="item.type=='image'" />
+					<button class="cu-btn sm bg-orange toAccount" @click="toAccount">查看更多权益</button>
 		      <video
 		        :src="item.url"
 		        autoplay
@@ -187,6 +188,11 @@ swiperList: [
 		methods: {
 			cardSwiper(e) {
 			  this.cardCur = e.detail.current;
+			},
+			toAccount() {
+				uni.navigateTo({
+					url: '/pages/user/account'
+				})
 			}
 		}
 	}
@@ -204,5 +210,10 @@ swiperList: [
 }
 .card-swiper {
 	height: 200px !important;
+}
+.toAccount {
+	position: absolute;
+	bottom: 100rpx;
+	left: 30rpx;
 }
 </style>
