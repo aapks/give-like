@@ -8,6 +8,10 @@
         <view class="title">姓名</view>
         <input placeholder="请输入真实姓名" type="text" />
       </view>
+      <view class="cu-form-group">
+        <view class="title">身份证号</view>
+        <input placeholder="请输入身份证号" type="text" />
+      </view>
     </form>
     <view class="padding">
       <view class="auth-item flex">

@@ -1,5 +1,7 @@
 <template>
   <view class="page">
+    <view class="flex align-center">
+
     <scroll-view scroll-x class="bg-white nav">
       <view class="flex text-center">
         <view
@@ -14,9 +16,13 @@
       </view>
     </scroll-view>
 
-    <view>
-      <text></text>
+    <view class="padding-sm">
+      <navigator url="/pages/task/publish">
+        <text class="text-lg text-gray cuIcon-roundadd"></text>
+      
+      </navigator>
     </view> 
+    </view>
 
     <swiper
       class="card-swiper"
@@ -71,9 +77,10 @@
             {{item.cname?item.cname:""}}
             <text class="text-sm text-grey margin-left-sm">任务剩余量：{{item.sur_num?item.sur_num:0}}</text>
           </view>
-          <view class="text-gray text-xs flex justify-between">
+          <view class="text-gray text-xs">
             <view class="text-cut">任务要求: {{item.type?item.type:""}}</view>
             <view class="text-cut">需求方:{{item.nickname}}</view>
+            <view class="paystate">已付款</view>
           </view>
         </view>
         <view class="action">
@@ -310,5 +317,19 @@ export default {
   line-height: 80rpx;
   text-indent: 20rpx;
   background-color: beige;
+}
+.text-lg {
+  font-size: 24px;
+}
+.cu-list.menu-avatar>.cu-item .content {
+  line-height: 1.1em;
+}
+.paystate {
+  display: inline-block;
+  background-color: rgba(255,135,51,0.1);
+  color: #FF8733;
+  font-size: 12px;
+  padding: 4rpx;
+  border-radius: 4px;
 }
 </style>

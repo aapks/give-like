@@ -3,7 +3,7 @@
     <task v-if="PageCur=='task'"></task>
     <!-- 商城 -->
     <!-- 发布 -->
-    <publish v-if="PageCur=='publish'"></publish>
+    <!-- <publish v-if="PageCur=='publish'"></publish> -->
     <!-- 发现 -->
     <!-- 我的 -->
     <user v-if="PageCur=='user'"></user>
@@ -25,7 +25,6 @@
       </view>
       <view class="action text-gray add-action" @click="NavChange" data-cur="publish">
         <button class="cu-btn cuIcon-add bg-orange shadow"></button>
-        发布
       </view>
       <view class="action" @click="NavChange" data-cur="plugin">
         <view class="cuIcon-cu-image">
