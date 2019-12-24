@@ -6,6 +6,7 @@
           <text class="cuIcon-settings"></text>
         </navigator>
       </view>
+      
       <view class="flex justify-between">
         <view class="flex">
           <view

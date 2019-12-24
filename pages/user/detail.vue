@@ -9,6 +9,11 @@
 				{{item.title}}
 			</view>
 		</scroll-view>
+		<view class="padding">
+        <button class="cu-btn sm margin-right-sm bg-orange">本日</button>
+        <button class="cu-btn sm margin-right-sm">本月</button>
+        <button class="cu-btn sm">本年</button>
+      </view>
 		<view class="cu-list menu">
 			<view class="cu-item" v-for="(item, index) in 5" :key="index">
 				<view class="content">

@@ -14,6 +14,10 @@
       </view>
     </scroll-view>
 
+    <view>
+      <text></text>
+    </view> 
+
     <swiper
       class="card-swiper"
       :class="dotStyle?'square-dot':'round-dot'"
