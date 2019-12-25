@@ -202,7 +202,8 @@ export default {
           cuIcon: "../../static/paihangbang@2x.png",
           color: "yellow",
           badge: 0,
-          name: "排行榜"
+          name: "排行榜",
+          url: "/pages/user/ranking"
         },
         {
           cuIcon: "../../static/shimingrenzhneg@2x.png",

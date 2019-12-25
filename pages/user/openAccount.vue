@@ -35,7 +35,14 @@
 		  <swiper-item v-for="(item,index) in swiperList" :key="index" :class="cardCur==index?'cur':''">
 		    <view class="swiper-item">
 		      <image :src="item.url" mode="aspectFill" v-if="item.type=='image'" />
-					<button class="cu-btn sm bg-orange toAccount" @click="toAccount">查看更多权益</button>
+					<view class="inner">
+						<view class="flex align-center justify-start">
+							<image class="vip margin-right-sm" src="../../static/vip@2x.png"></image>尊享会员
+						</view>
+						<view>升级需要￥698/六个月</view>
+						<view>300任务/天</view>
+					<button class="cu-btn sm bg-orange toAccount margin-top-sm" @click="toAccount">查看更多权益</button>
+					</view>
 		      <video
 		        :src="item.url"
 		        autoplay
@@ -217,8 +224,16 @@ swiperList: [
 	height: 200px !important;
 }
 .toAccount {
+	
+}
+.inner {
 	position: absolute;
 	bottom: 100rpx;
 	left: 30rpx;
+	color: #fff;
+}
+.vip {
+  width: 60rpx;
+  height: 30rpx;
 }
 </style>

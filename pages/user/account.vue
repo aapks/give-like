@@ -4,10 +4,11 @@
 			<block slot="content">会员权益</block>
 		</cu-custom>
 		<view class="padding-lg">
-			
 			<view class="card bg-orange radius padding-lg">
 				<view class="margin-top-sm">
-					<view>VIP尊享会员</view>
+					<view class="flex align-center justify-start">
+						<image class="vip margin-right-sm" src="../../static/vip@2x.png"></image>尊享会员
+					</view>
 					<view>升级需要￥698/六个月</view>
 					<view>300任务/天</view>
 				</view>
@@ -43,5 +44,9 @@
 }
 .card {
 	height: 300rpx;
+}
+.vip {
+  width: 60rpx;
+  height: 30rpx;
 }
 </style>

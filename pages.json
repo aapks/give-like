@@ -229,6 +229,10 @@
             "path" : "pages/user/dredge",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/ranking",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
