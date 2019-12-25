@@ -66,7 +66,7 @@
 				<view class="flex justify-between">
 					<view class="margin-top-sm">
 						<view>合计：¥1200.00 元</view>
-						<view>账户余额：200  余额不足  <navigator class="toBalance text-bold text-orange" url="/pages/user/balance">请充值</navigator></view>
+						<view>账户余额：200  余额不足  <navigator class="toBalance text-bold text-orange margin-left-xs" url="/pages/user/balance">请充值</navigator></view>
 					</view>
         <button class="cu-btn bg-orange sm margin-top-sm lg" @click="Agent">确认发布</button>
 

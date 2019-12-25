@@ -124,6 +124,7 @@ export default {
   height: 120rpx;
 }
 .cu-list.menu-avatar>.cu-item {
+	padding-right: 30rpx;
   height: 220rpx;
 }
 </style>

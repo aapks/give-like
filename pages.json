@@ -237,6 +237,14 @@
             "path" : "pages/login/protocol",
             "style" : {}
         }
+        ,{
+            "path" : "pages/task/taskOrder",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/task/audit",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

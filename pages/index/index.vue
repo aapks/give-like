@@ -23,7 +23,7 @@
         </view>
         <view :class="PageCur=='publish'?'text-orange':'text-gray'">发布</view>
       </view>
-      <view class="action text-gray add-action" @click="NavChange" data-cur="publish">
+      <view class="action text-gray add-action" @click="NavChange" data-cur="component">
         <button class="cu-btn cuIcon-camerafill bg-orange shadow">
         </button>
       </view>
