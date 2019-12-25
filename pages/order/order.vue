@@ -10,14 +10,17 @@
 			</view>
 		</scroll-view>
 		
-		<view class="order-list padding">
+		<view class="order-list">
 			<view class="order-list-item">
-				<view class="order-list-item-head">商户名称商户名称<text class="cuIcon-right"></text></view>
+				<view class="order-list-item-head flex justify-between">
+					<navigator url="">商户名称商户名称<text class="cuIcon-right"></text></navigator>
+					<text class="text-gray">待付款/待发货/交易完成</text>
+				</view>
 				<view>
 					
-					<view class="text-right">
+					<view class="actions text-right margin-top-sm">
 						<button class="cu-btn line-grey round">取消订单</button>
-						<button class="cu-btn bg-orange round">取消订单</button>
+						<button class="cu-btn bg-orange round margin-left-lg">取消订单</button>
 					</view>
 				</view>
 			</view>
@@ -69,5 +72,14 @@
 </script>
 
 <style lang="scss">
-
+.order-list{
+	&-item {
+		padding: 30rpx;
+		border-bottom: 20rpx solid rgb(245,245,245);
+		&-head {
+			padding-bottom: 20rpx;
+			border-bottom: 1px dashed #ddd;
+		}
+	}
+}
 </style>

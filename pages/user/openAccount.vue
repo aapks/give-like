@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgcolor="bg-white" :isBack="true">
+		<cu-custom style="background: #fff!important;z-index:999;" bgcolor="bg-white" :isBack="true">
 			<block slot="content">升级会员</block>
 		</cu-custom>
 
@@ -60,11 +60,12 @@
 		<view class="cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
 		  <view class="cu-item" v-for="(item,index) in cuIconList" :key="index" v-if="index<gridCol*3">
 		    <navigator :url="item.url">
-		      <view :class="['cuIcon-' + item.cuIcon,'text-' + item.color]">
+		      <!-- <view :class="['cuIcon-' + item.cuIcon,'text-' + item.color]">
 		        <view class="cu-tag badge" v-if="item.badge!=0">
 		          <block v-if="item.badge!=1">{{item.badge>99?'99+':item.badge}}</block>
 		        </view>
-		      </view>
+		      </view> -->
+					<image class="icon" :src="item.cuIcon"></image>
 		      <text>{{item.name}}</text>
 		    </navigator>
 		  </view>
@@ -88,9 +89,6 @@
 									<text class="text-black text-bold text-df margin-right-sm">￥698</text>
 									
 									<text class="text-line margin-right-sm">市场价￥860</text>
-									
-									
-									
 									已售：2323
 								</view>
 								
@@ -162,27 +160,27 @@ swiperList: [
       dotStyle: false,
 			cuIconList: [
 			  {
-			    cuIcon: "cardboardfill",
+			    cuIcon: "../../static/jiedan@2x.png",
 			    color: "red",
 			    badge: 0,
 			    name: "任务接单",
 					url: '/pages/user/openAccount'
 			  },
 			  {
-			    cuIcon: "selection",
+			    cuIcon: "../../static/yaoqing@2x.png",
 			    color: "orange",
 			    badge: 1,
 			    name: "邀请赚钱",
 			    url: "/pages/task/mytask"
 			  },
 				{
-				  cuIcon: "selection",
+				  cuIcon: "../../static/fanyong@2x.png",
 				  color: "orange",
 				  badge: 1,
 				  name: "接单返佣",
 				  url: "/pages/task/mytask"
 				},{
-			    cuIcon: "selection",
+			    cuIcon: "../../static/gouwu@2x.png",
 			    color: "orange",
 			    badge: 1,
 			    name: "购物分成",
@@ -235,5 +233,12 @@ swiperList: [
 .vip {
   width: 60rpx;
   height: 30rpx;
+}
+.icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+.cu-bar.fixed {
+	background-color: #fff!important;
 }
 </style>
