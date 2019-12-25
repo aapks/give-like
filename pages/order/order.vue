@@ -22,7 +22,7 @@
 						<view>
 							<view class="text-black">产品名称产品名称产品名称</view>
 							<view class="text-gray text-sm margin-top-xs">产品名称产品名称产品名称</view>
-							<view><text class="text-xl text-black text-bold margin-right-sm">￥120</text>x1</view>
+							<view class="margin-top-xs"><text class="text-lg text-black text-bold margin-right-sm">￥120</text>x1</view>
 						</view>
 					</view>
 					<view class="actions text-right margin-top-sm">
