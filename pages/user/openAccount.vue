@@ -88,7 +88,7 @@
 								</view>
 								
 								<view class="text-gray text-sm">
-									<button class="cu-btn bg-orange sm">开通会员</button>
+									<button class="cu-btn bg-orange sm" @click="toDredge">开通会员</button>
 									<!-- <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
 									<text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
 									<text class="cuIcon-messagefill margin-lr-xs"></text> 30 -->
@@ -186,6 +186,11 @@ swiperList: [
 			};
 		},
 		methods: {
+			toDredge() {
+				uni.navigateTo({
+					url: '/pages/user/dredge'
+				})
+			},
 			cardSwiper(e) {
 			  this.cardCur = e.detail.current;
 			},

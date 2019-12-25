@@ -307,7 +307,7 @@ export default {
 }
 .menu {
   width: 100%;
-  padding: 45rpx 30rpx 30rpx;
+  padding: 45rpx 20rpx 30rpx;
   &-nav {
     display: block;
     text-align: center;
@@ -318,7 +318,7 @@ export default {
   }
   &-text {
     margin-top: 20rpx;
-    font-size: 14px;
+    font-size: 28rpx;
     color: #666;
   }
 }
