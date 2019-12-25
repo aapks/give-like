@@ -9,6 +9,19 @@
 				{{item.title}}
 			</view>
 		</scroll-view>
+		
+		<view class="order-list padding">
+			<view class="order-list-item">
+				<view class="order-list-item-head">商户名称商户名称<text class="cuIcon-right"></text></view>
+				<view>
+					
+					<view class="text-right">
+						<button class="cu-btn line-grey round">取消订单</button>
+						<button class="cu-btn bg-orange round">取消订单</button>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -38,6 +51,13 @@
 				TabCur: 0,
 				scrollLeft: 0
 			};
+		},
+		onLoad(options) {
+			let {status } = options
+			if(status) {
+				this.TabCur = status
+			}
+			
 		},
 		methods: {
 			tabSelect(e) {

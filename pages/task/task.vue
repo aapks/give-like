@@ -14,7 +14,7 @@
           >{{item.name}}</view>
         </view>
       </scroll-view>
-      <view class="padding-sm">
+      <view class="padding-sm" style="padding-right:30rpx;">
         <navigator url="/pages/task/publish">
           <text class="text-lg text-gray cuIcon-roundadd"></text>
         </navigator>
@@ -347,6 +347,7 @@ export default {
 .cu-list.menu-avatar>.cu-item {
   margin-top: 15rpx;
   height: 90px;
+  padding-right: 30rpx;
   align-items: flex-start;
 }
 .screen-swiper {

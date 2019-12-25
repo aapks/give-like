@@ -24,7 +24,7 @@
         </view>
 
         <navigator>
-          <text class="cuIcon-right"></text>
+          <text class="cuIcon-right user-link"></text>
         </navigator>
       </view>
 
@@ -82,36 +82,38 @@
         </navigator>
       </view>
        <view class="panel">
-         <view class="panel-title">我的订单</view>
+         <view class="panel-title flex justify-between">我的订单
+           <navigator style="font-weight:normal;font-size: 12px;color:#999;" hover-class="none" url="/pages/order/order">查看全部<text  class="cuIcon-right"></text></navigator>
+         </view>
          <view class="panel-body">
            <view class="menu grid col-5">
              <view>
 
-             <navigator class="menu-nav">
+             <navigator class="menu-nav" url="/pages/order/order?status=1">
                <image src="../../static/daifukuan@2x.png" class="menu-icon"></image>
                <view class="menu-text">待付款</view>
              </navigator>
              </view>
              <view>
-             <navigator class="menu-nav">
+             <navigator class="menu-nav" url="/pages/order/order?status=2">
                <image src="../../static/daifahuo@2x.png" class="menu-icon"></image>
                <view class="menu-text">待发货</view>
              </navigator>
              </view>
              <view>
-             <navigator class="menu-nav">
+             <navigator class="menu-nav" url="/pages/order/order?status=3">
                <image src="../../static/daishouhuo@2x.png" class="menu-icon"></image>
                <view class="menu-text">待收货</view>
              </navigator>
              </view>
              <view>
-             <navigator class="menu-nav">
+             <navigator class="menu-nav" url="/pages/order/order?status=4">
                <image src="../../static/daipingjia@2x.png" class="menu-icon"></image>
                <view class="menu-text">待评价</view>
              </navigator>
              </view>
              <view>
-             <navigator class="menu-nav">
+             <navigator class="menu-nav" url="/pages/order/order?status=5">
                <image src="../../static/tuikuan@2x.png" class="menu-icon"></image>
                <view class="menu-text">退款/售后</view>
              </navigator>
@@ -328,7 +330,7 @@ export default {
   height: 30rpx;
   margin-left: 14rpx;
 }
-.cuIcon-right {
+.user-link {
  position: relative;
  top: 55rpx;
 }
