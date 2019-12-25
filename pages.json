@@ -233,6 +233,10 @@
             "path" : "pages/user/ranking",
             "style" : {}
         }
+        ,{
+            "path" : "pages/login/protocol",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

@@ -3,7 +3,7 @@
     <task v-if="PageCur=='task'"></task>
     <!-- 商城 -->
     <!-- 发布 -->
-    <!-- <publish v-if="PageCur=='publish'"></publish> -->
+    <publish v-if="PageCur=='publish'"></publish>
     <!-- 发现 -->
     <!-- 我的 -->
     <user v-if="PageCur=='user'"></user>
@@ -17,22 +17,23 @@
         </view>
         <view :class="PageCur=='task'?'text-orange':'text-gray'">任务大厅</view>
       </view>
+      <view class="action" @click="NavChange" data-cur="publish">
+        <view class="cuIcon-cu-image">
+          <image :src="'/static/tabbar/find' + [PageCur == 'publish'?'_cur':''] + '.png'" />
+        </view>
+        <view :class="PageCur=='publish'?'text-orange':'text-gray'">发布</view>
+      </view>
+      <view class="action text-gray add-action" @click="NavChange" data-cur="publish">
+        <button class="cu-btn cuIcon-camerafill bg-orange shadow">
+        </button>
+      </view>
       <view class="action" @click="NavChange" data-cur="component">
         <view class="cuIcon-cu-image">
           <image :src="'/static/tabbar/shop' + [PageCur == 'component'?'_cur':''] + '.png'" />
         </view>
         <view :class="PageCur=='component'?'text-orange':'text-gray'">会员商城</view>
       </view>
-      <view class="action text-gray add-action" @click="NavChange" data-cur="publish">
-        <button class="cu-btn cuIcon-camerafill bg-orange shadow">
-        </button>
-      </view>
-      <view class="action" @click="NavChange" data-cur="plugin">
-        <view class="cuIcon-cu-image">
-          <image :src="'/static/tabbar/find' + [PageCur == 'plugin'?'_cur':''] + '.png'" />
-        </view>
-        <view :class="PageCur=='plugin'?'text-orange':'text-gray'">发现</view>
-      </view>
+      
       <view class="action" @click="NavChange" data-cur="user">
         <view class="cuIcon-cu-image">
           <image :src="'/static/tabbar/user' + [PageCur == 'user'?'_cur':''] + '.png'" />

@@ -1,25 +1,26 @@
 <template>
   <view class="page">
-    <view class="flex align-center">
-      <scroll-view scroll-x class="bg-white nav">
-        <view class="flex text-center">
-          <view
-            class="cu-item flex-sub"
-            :class="index==TabCur?'text-orange cur':''"
-            v-for="(item,index) in navArr"
-            :key="index"
-            @tap="tabSelect"
-            :id="item.id"
-        :data-index="index"
-          >{{item.name}}</view>
-        </view>
-      </scroll-view>
+		<scroll-view scroll-x class="bg-white nav">
+		  <view class="flex text-center">
+		    <view
+		      class="cu-item flex-sub"
+		      :class="index==TabCur?'text-orange cur':''"
+		      v-for="(item,index) in navArr"
+		      :key="index"
+		      @tap="tabSelect"
+		      :id="item.id"
+		  :data-index="index"
+		    >{{item.name}}</view>
+		  </view>
+		</scroll-view>
+    <!-- <view class="flex align-center">
+      
       <view class="padding-sm" style="padding-right:30rpx;">
         <navigator url="/pages/task/publish">
           <text class="text-lg text-gray cuIcon-roundadd"></text>
         </navigator>
       </view> 
-    </view>
+    </view> -->
 
     <view class="padding">
       <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
@@ -186,6 +187,19 @@
       <image src="/static/logo.png" mode="aspectFit" />
       <view class="gray-text">接单中...</view>
     </view> -->
+    <view class="cu-modal" :class="modalName=='Modal'?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar bg-white justify-end">
+					<view class="content">公告</view>
+					<view class="action" @tap="hideModal">
+						<text class="cuIcon-close text-red"></text>
+					</view>
+				</view>
+				<view class="padding-xl">
+					这里是测试公告
+				</view>
+			</view>
+		</view>
     <view class="cu-tabbar-height"></view>
   </view>
 </template>
@@ -194,6 +208,7 @@
 export default {
   data() {
     return {
+      modalName: 'Modal',
       navArr: [],
 	  tabid:"",
 	  tasklist:[],
@@ -267,6 +282,9 @@ export default {
   },
   
   methods: {
+    hideModal(e) {
+				this.modalName = null
+			},
     tabSelect(e) {
 		uni.showLoading({
 			title:"加载中"

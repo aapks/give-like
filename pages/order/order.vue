@@ -16,8 +16,15 @@
 					<navigator url="">商户名称商户名称<text class="cuIcon-right"></text></navigator>
 					<text class="text-gray">待付款/待发货/交易完成</text>
 				</view>
-				<view>
-					
+				<view class="margin-top-sm">
+					<view class="flex justify-start">
+						<view class="cu-avatar radius lg margin-right-sm"><image src="https://flutterchina.club/get-started/codelab/images/step2-screenshot.png" mode=""></image></view>
+						<view>
+							<view class="text-black">产品名称产品名称产品名称</view>
+							<view class="text-gray text-sm margin-top-xs">产品名称产品名称产品名称</view>
+							<view><text class="text-xl text-black text-bold margin-right-sm">￥120</text>x1</view>
+						</view>
+					</view>
 					<view class="actions text-right margin-top-sm">
 						<button class="cu-btn line-grey round">取消订单</button>
 						<button class="cu-btn bg-orange round margin-left-lg">取消订单</button>
@@ -76,10 +83,18 @@
 	&-item {
 		padding: 30rpx;
 		border-bottom: 20rpx solid rgb(245,245,245);
+		&:last-child {
+			border-bottom: none;
+		}
 		&-head {
 			padding-bottom: 20rpx;
 			border-bottom: 1px dashed #ddd;
 		}
 	}
+}
+.cu-avatar {
+	flex: 0 0 120rpx;
+	width: 120rpx;
+	height: 120rpx;
 }
 </style>

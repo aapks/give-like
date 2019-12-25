@@ -1,6 +1,6 @@
 <template name="components">
 	<view>
-		暂未开放
+		<view class="flex align-center justify-center text-center" style="height: 100vh;">暂未开放</view>
 		<!-- <scroll-view scroll-y class="page">
 			<image src="/static/componentBg.png" mode="widthFix" class="response"></image>
 			<view class="nav-list">

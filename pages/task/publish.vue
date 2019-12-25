@@ -1,8 +1,8 @@
 <template>
   <view>
-		<cu-custom bgcolor="bg-white" :isBack="true">
+		<!-- <cu-custom bgcolor="bg-white" :isBack="true">
       <block slot="content">发布任务</block>
-    </cu-custom>
+    </cu-custom> -->
     <form>
       <view class="cu-form-group margin-top">
         <view class="title">平台选择</view>
@@ -73,6 +73,7 @@
 				</view>
       </view>
     </form>
+		<view class="cu-tabbar-height"></view>
   </view>
 </template>
 

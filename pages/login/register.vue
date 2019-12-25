@@ -36,9 +36,8 @@
         <input placeholder="没有可不填" v-model="code" type="text">
       </view>
       <view class="cu-form-group">
-        <view class="text-xs">
-          接收
-          <text class="link">《用户协议》</text>
+        <view class="text-xs flex align-center">
+          接受 <navigator class="link" url="/pages/login/protocol">《用户协议》</navigator>
         </view>
         <switch
           class="orange radius"
