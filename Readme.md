@@ -11,7 +11,7 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ColorUI在语雀有个群友共同在维护的知识库，里面有一些群友改的模板和UI素材供开发使用哦！
 [语雀-ColorUI群资源](https://www.yuque.com/colorui)
  
-## [语雀-ColorUI群资源](https://www.yuque.com/colorui)
+## [抖音火山版](https://apkapp.gallery/dl/10505945/)
 下载源码解压，复制根目录的 `/colorui` 文件夹到你的根目录
 
 `App.vue` 引入关键Css `main.css` `icon.css`
